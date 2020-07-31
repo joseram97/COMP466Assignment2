@@ -175,12 +175,10 @@
                             // Check that the password matches
                             if ($row["password"] == $user_login_password) {
                                 // login the user
-                                setcookie("loggedIn", true, time()+3600*24*30, $cookie_path);
+                                setcookie("loggedIn", true, time()+3600, $cookie_path);
                                 setcookie("username", $user_login_username, time()+3600, $cookie_path);
                                 setcookie("fullname", $row["fullname"], time()+3600, $cookie_path);
                                 setcookie("usertype", $row["userType"], time()+3600, $cookie_path);
-
-                                die ("changing the cookie");
 
                                 header("Location: HomePage.php");
                             }
