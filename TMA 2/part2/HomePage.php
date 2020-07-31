@@ -100,10 +100,9 @@
             ?>
             <?php
                 // Set up any constants that may be used throughout the program
-                $cookiedomain = "http://localhost:3000/TMA%202/part2";
-                $servername = "localhost";
+                $servername = "au-comp466-assignment2-server.mysql.database.azure.com";
                 $username = "jmramirez";
-                $password = "password";
+                $password = "Passw0rd";
                 $DATABASE_NAME = "BoatOnlineCourses";
                 $CONST_DISPLAY_BLOCK = "style=\"display:block;\"";
                 $CONST_DISPLAY_NONE = "style=\"display:none;\"";
