@@ -104,6 +104,9 @@
                 $username = "jmramirez@au-comp466-assignment2-server";
                 $password = "Passw0rd";
                 $DATABASE_NAME = "BoatOnlineCourses";
+                // $cookie_domain = "https://au-comp466-assignment2-web.azurewebsites.net";
+                $cookie_domain = ".localhost";
+                $cookie_path = "/TMA%202/part2";
                 $CONST_DISPLAY_BLOCK = "style=\"display:block;\"";
                 $CONST_DISPLAY_NONE = "style=\"display:none;\"";
                 $CONST_DISPLAY_OPACITY_FLEX = "style=\"display:flex; opacity: 1;\"";
@@ -159,10 +162,10 @@
                             // Check that the password matches
                             if ($row["password"] == $user_login_password) {
                                 // login the user
-                                setcookie("loggedIn", true);
-                                setcookie("username", $user_login_username);
-                                setcookie("fullname", $row["fullname"]);
-                                setcookie("usertype", $row["userType"]);
+                                setcookie("loggedIn", true, time()+3600*24*30, $cookie_path);
+                                setcookie("username", $user_login_username, time()+3600*24*30, $cookie_path);
+                                setcookie("fullname", $row["fullname"], time()+3600*24*30, $cookie_path);
+                                setcookie("usertype", $row["userType"], time()+3600*24*30, $cookie_path);
 
                                 header("Location: HomePage.php");
                             }
