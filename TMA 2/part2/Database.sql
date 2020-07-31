@@ -97,7 +97,7 @@ CREATE TABLE Images (
     courseid INT,
     contentNumber INT,
     FOREIGN KEY (lessonNumber, unitNumber, courseid, contentNumber)
-        REFERENCES LessonsContents(lessonNumber, unitNumber, courseid, contentNumber)
+        REFERENCES LessonContents(lessonNumber, unitNumber, courseid, contentNumber)
         ON DELETE CASCADE,
     imageUrl VARCHAR(1000),
     PRIMARY KEY (imageNumber, lessonNumber, unitNumber, courseid, contentNumber)
