@@ -2,14 +2,14 @@
     require "phpLibrary/queryFunctions.php";
     require "phpLibrary/EMLFunctions.php";
 
-    setcookie("loggedIn", true, time() + 3600, "/");
-    setcookie("username", "tstUser1", time() + 3600, "/");
-    setcookie("fullname", "Jeff Bezos", time() + 3600, "/");
-    setcookie("usertype", "SME", time() + 3600, "/");
-    // setcookie("loggedIn", false, time() + 3600, "/");
-    // setcookie("username", null, time() + 3600, "/");
-    // setcookie("fullname", null, time() + 3600, "/");
-    // setcookie("usertype", null, time() + 3600, "/");
+    // setcookie("loggedIn", true, time() + 3600, "/");
+    // setcookie("username", "tstUser1", time() + 3600, "/");
+    // setcookie("fullname", "Jeff Bezos", time() + 3600, "/");
+    // setcookie("usertype", "SME", time() + 3600, "/");
+    setcookie("loggedIn", false, time() + 3600, "/");
+    setcookie("username", null, time() + 3600, "/");
+    setcookie("fullname", null, time() + 3600, "/");
+    setcookie("usertype", null, time() + 3600, "/");
 ?>
 <!DOCTYPE html>
 <!--This is the main page for the first assignment. Create the welcome page and enable all of the navigation-->
