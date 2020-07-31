@@ -2,16 +2,16 @@
     require "phpLibrary/queryFunctions.php";
     require "phpLibrary/EMLFunctions.php";
 
-    setcookie("loggedIn", true, time() + 3600, "/");
-    setcookie("username", "tstUser1", time() + 3600, "/");
-    setcookie("fullname", "Jeff Bezos", time() + 3600, "/");
-    setcookie("usertype", "SME", time() + 3600, "/");
-    // setcookie("loggedIn", false, time() + 3600, "/");
-    // setcookie("username", null, time() + 3600, "/");
-    // setcookie("fullname", null, time() + 3600, "/");
-    // setcookie("usertype", null, time() + 3600, "/");
+    // setcookie("loggedIn", true, time() + 3600, "/");
+    // setcookie("username", "tstUser1", time() + 3600, "/");
+    // setcookie("fullname", "Jeff Bezos", time() + 3600, "/");
+    // setcookie("usertype", "SME", time() + 3600, "/");
+    setcookie("loggedIn", false, time() + 3600, "/");
+    setcookie("username", null, time() + 3600, "/");
+    setcookie("fullname", null, time() + 3600, "/");
+    setcookie("usertype", null, time() + 3600, "/");
 
-    if ($_COOKIE["loggedIn"] == false) {
+    if ($_COOKIE["loggedIn"] == true) {
         header("Location: HomePage.php");
     }
 ?>
