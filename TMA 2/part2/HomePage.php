@@ -6,14 +6,14 @@
     // setcookie("username", "tstUser1", time() + 3600, "/");
     // setcookie("fullname", "Jeff Bezos", time() + 3600, "/");
     // setcookie("usertype", "SME", time() + 3600, "/");
-    setcookie("loggedIn", false, time() + 3600, "/");
-    setcookie("username", null, time() + 3600, "/");
-    setcookie("fullname", null, time() + 3600, "/");
-    setcookie("usertype", null, time() + 3600, "/");
+    // setcookie("loggedIn", false, time() + 3600, "/");
+    // setcookie("username", null, time() + 3600, "/");
+    // setcookie("fullname", null, time() + 3600, "/");
+    // setcookie("usertype", null, time() + 3600, "/");
 
-    if ($_COOKIE["loggedIn"] == true) {
-        header("Location: HomePage.php");
-    }
+    // if ($_COOKIE["loggedIn"] == true) {
+    //     header("Location: HomePage.php");
+    // }
 ?>
 <!DOCTYPE html>
 <!--This is the main page for the first assignment. Create the welcome page and enable all of the navigation-->
@@ -119,7 +119,7 @@
                 $DATABASE_NAME = "BoatOnlineCourses";
                 $cookie_domain = "au-comp466-assignment2-web";
                 // $cookie_domain = "https://localhost";
-                $cookie_path = "/wwwroot/TMA$202/part2";
+                $cookie_path = "/";
                 $CONST_DISPLAY_BLOCK = "style=\"display:block;\"";
                 $CONST_DISPLAY_NONE = "style=\"display:none;\"";
                 $CONST_DISPLAY_OPACITY_FLEX = "style=\"display:flex; opacity: 1;\"";
@@ -175,14 +175,10 @@
                             // Check that the password matches
                             if ($row["password"] == $user_login_password) {
                                 // login the user
-                                // setcookie("loggedIn", true, time()+3600*24*30, $cookie_path, $cookie_domain);
-                                // setcookie("username", $user_login_username, time()+3600*24*30, $cookie_path, $cookie_domain);
-                                // setcookie("fullname", $row["fullname"], time()+3600*24*30, $cookie_path, $cookie_domain);
-                                // setcookie("usertype", $row["userType"], time()+3600*24*30, $cookie_path, $cookie_domain);
-                                setcookie("loggedIn", true);
-                                setcookie("username", $user_login_username);
-                                setcookie("fullname", $row["fullname"]);
-                                setcookie("usertype", $row["userType"]);
+                                setcookie("loggedIn", true, time()+3600*24*30, $cookie_path);
+                                setcookie("username", $user_login_username, time()+3600, $cookie_path);
+                                setcookie("fullname", $row["fullname"], time()+3600, $cookie_path);
+                                setcookie("usertype", $row["userType"], time()+3600, $cookie_path);
 
                                 header("Location: HomePage.php");
                             }
