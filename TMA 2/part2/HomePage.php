@@ -106,7 +106,7 @@
                 $DATABASE_NAME = "BoatOnlineCourses";
                 $cookie_domain = "au-comp466-assignment2-web.azurewebsites.net";
                 // $cookie_domain = "localhost";
-                $cookie_path = "wwwroot/site/TMA%202/part2";
+                $cookie_path = "/";
                 $CONST_DISPLAY_BLOCK = "style=\"display:block;\"";
                 $CONST_DISPLAY_NONE = "style=\"display:none;\"";
                 $CONST_DISPLAY_OPACITY_FLEX = "style=\"display:flex; opacity: 1;\"";
