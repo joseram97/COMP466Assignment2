@@ -1,0 +1,136 @@
+/*These styles are for the*/
+:root {
+    --overlay-delay: 0.5s; /*Must match the overlay amount in the .js OverlayFadeOut function*/
+    --prompt-border-radius: 35px;
+    --course-icon-size: 20px;
+    --hover-animation-duration: 0.3s;
+}
+
+.selectorContainer {
+    min-width: 185px;
+    height: fit-content;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    background-color: #EAEAEA;
+    border-radius: 15px;
+    margin-top: 18%;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    padding: 5px 0px;
+}
+
+.selectorItemContainer {
+    padding: 5px 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.selectorItem {
+    display: flex;
+    flex-flow: column;
+    background-color: white;
+    border-radius: 15px;
+    padding: 10px;
+    transition: transform var(--hover-animation-duration);
+}
+
+.selectorItem:hover {
+    transform: scale(1.03);
+}
+
+.selectorUnitNumber {
+    box-sizing: initial;
+    width: fit-content;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 24px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color var(--hover-animation-duration);
+    border: 0;
+}
+
+.selectorUnitNumber:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.selectorUnitNumber:active {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.selectorUnitTitle {
+    font-size: 14px;
+    padding: 5px 10px;
+    margin-top: 5px;
+}
+
+.tutorialImage {
+    object-fit: contain;
+    max-width: 50%;
+    margin: 10px;
+    flex-grow: 1; 
+}
+
+.multipleImageContainer {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    width: 100%;
+}
+
+/*The following area are css objects for the quiz portion*/
+.quizTextArea {
+    width: 20rem;
+    height: 15rem;
+}
+
+.quizMultipleChoiceText {
+    width: 20rem;
+}
+
+.quiz-question-container {
+    padding: 20px 0px 20px 0px;
+}
+
+.quiz-question-header {
+    font-size: 18px;
+    padding-bottom: 15px;
+}
+
+.quiz-question-radiogroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.quiz-question-radioitem{
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.quizResult
+{
+    width: 60%;
+    word-break: break-word;
+    border-radius: 5px;
+    padding: 10px 10px 10px 10px;
+}
+
+.quizResultCorrect
+{
+    background-color: rgb(190, 255, 190);
+    color: green;
+}
+
+.quizResultIncorrect
+{
+    background-color: rgb(255, 191, 191);
+    color: brown;
+}
+
+.quizScore
+{
+    padding-top: 30px;
+}

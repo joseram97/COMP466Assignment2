@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<course name="The course name">
+    <courseDescription></courseDescription>
+    <units>
+        <unit number="The unit number" title="The unit title">
+            <unitDescription></unitDescription>
+            <lesson number="The lesson number" title="The lesson title">
+                <lessonContent number="The lesson Content Number" title="Some title (optional)">
+                    <content></content>
+                    <images>
+                        <image number="The number of the image to show image order" fileName="The file name from the images that are attached when adding the EML"></image>
+                    </images>
+                </lessonContent>
+            </lesson>
+        </unit>
+    </units>
+    <quizzes>
+        <quiz unit="The unit number">
+            <question number="The question number">
+                <questionText></questionText>
+                <answer1></answer1>
+                <answer2></answer2>
+                <answer3></answer3>
+                <answer4></answer4>
+                <correctAnswer></correctAnswer>
+            </question>
+        </quiz>
+    </quizzes>
+</course>

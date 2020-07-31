@@ -1,0 +1,718 @@
+<?xml version="1.0"?>
+<course name="Basic Web Course 1 - Learning the basics">
+    <courseDescription>This course will cover the basics of HTML, CSS, Javascript, XML and AJAX requests.</courseDescription>
+    <units>
+        <unit number="1" title="HTML &amp; CSS Basics">
+            <unitDescription>
+                <![CDATA[
+                    <strong>Html</strong> is the basis for all websites. It is capable of marking up information for most modern browsers and allows web developers to customize and display web items easily.
+                    CSS is also useful for presenting your web page in a specific format that is visually appealing. A great benefit is that once a CSS file is created, you can apply it to many other html pages easily.
+                    Within this tutorial you will become familiar with the following topics:
+                    <ul>
+                        <li>Create basic html template</li>
+                        <li>How to display text</li>
+                        <li>How to create hyperlinks</li>
+                        <li>How to display buttons</li>
+                        <li>How to create Headers and Footers</li>
+                        <li>How to create style objects</li>
+                        <li>How to create mouse events</li>
+                    </ul>
+                ]]>
+            </unitDescription>
+            <lesson number="1" title="HTML Template">
+                <lessonContent number="1">
+                    <content>
+                        <![CDATA[
+                            HTML is a mark-up language used to display web pages on the internet. You can display text, images, and designs to showcase various forms of information to the world. All .html files start out the
+                            same and require a specific template to start out. This template will be the <i>base</i> of storing text and layouts. This is the format that all popular browsers will accept. The following code snippet
+                            shows the general layout of the base template:
+                        ]]>
+                    </content>
+                    <images>
+                        <image number="1" fileName="U1_HTMLTemplate.png"></image>
+                    </images>
+                </lessonContent>
+                <lessonContent number="2">
+                    <content>
+                        <![CDATA[
+                            <i><strong>Note:</strong> Ensure that all of the tags include the correct tag names, with the correct end tags, and that all external files (javascript, css) are mentioned in the beginning. Any mis-matching 
+                            will not allow the html file to show properly within the browser</i>  
+                        ]]>
+                    </content>
+                </lessonContent>
+            </lesson>
+            <lesson number="2" title="Tags">
+                <lessonContent number="1">
+                    <content>
+                        <![CDATA[
+                            Tags are the "bread and butter" of html programming. Tags will organize your data in a readable format that browsers can properly interpret. They have the following format...
+                        ]]>
+                    </content>
+                    <images>
+                        <image number="1" fileName="U1_TagExamples.png"></image>
+                        <image number="2" fileName="U1_TagsExampleRendered.png"></image>
+                    </images>
+                </lessonContent>
+                <lessonContent number="2">
+                    <content>
+                        <![CDATA[
+                            You can enter more tags within the first set of tags, (including the same tags, images, or just plain text). In the below sections, there will be some examples of what kinds of tags are possible to enter.
+                        ]]>
+                    </content>
+                </lessonContent>
+                <lessonContent number="3">
+                    <content>
+                        <![CDATA[
+                            These tags can also help with displaying some text information in order to convey what you need to tell the internet user.
+                        ]]>
+                    </content>
+                </lessonContent>
+            </lesson>
+            <lesson number="3" title="Create hyperlink">
+                <lessonContent number="1">
+                    <content>
+                        <![CDATA[
+                            Should you need to link to another url, you must create a hyperlink using the <i>a</i> tag and include the following information
+                            <ul>
+                                <li>URL: This is mentioned within the "href" property</li>
+                                <li>Target: this property will let you decide if you want a new tab to show the link, or be shown on a new window. (<Strong>_self</Strong> for same window, <strong>_blank</strong> for new window)</li>
+                                <li>(Optional) Style Class</li>
+                            </ul>
+                            See the sample code below for an example:
+                        ]]>
+                    </content>
+                    <images>
+                        <image number="1" fileName="U1_HyperlinkExample.png"></image>
+                        <image number="2" fileName="U1_HyperlinkRenderExample.gif"></image>
+                    </images>
+                </lessonContent>
+            </lesson>
+            <lesson number="4" title="Create buttons">
+                <lessonContent number="1">
+                    <content>
+                        <![CDATA[
+                            Setting up headers and footers within an html page can help organize your content in a more user friendly manner. Headers can be used to setup a navigation pane, display notification information
+                            and other various media. Footers can be placed to include a <i>Site Map</i>, other links, and copyright information. See the following examples:
+                        ]]>
+                    </content>
+                    <images>
+                        <image number="1" fileName="U1_HeaderFooterWebExample.png"></image>
+                    </images>
+                </lessonContent>
+                <lessonContent number="2">
+                    <content>
+                        <![CDATA[
+                            Including headers and footers are also easy to implement. Simply add the correctly names tags as shown in the code below
+                        ]]>
+                    </content>
+                    <images>
+                        <image number="1" fileName="U1_HeaderFooterExample.png"></image>
+                    </images>
+                </lessonContent>
+            </lesson>
+            <lesson number="5" title="CSS Styling">
+                <lessonContent number="1">
+                    <content>
+                        <![CDATA[
+                            Once the majority of your html page is complete, it can seem a little bland when the browser renders the html page with default styling. You can enhance the visual experience by create your own custom styles and layouts
+                            for various html objects, like the buttons, paragraph headers, the background of the entire page, and much more. There are 2 different ways of implementing this. You can individually change the styling right within HTML
+                            by referencing the "style" attribute in each object
+                        ]]>
+                    </content>
+                    <images>
+                        <image number="1" fileName="U1_StyleCssParameter.png"></image>
+                        <image number="2" fileName="U1_CssStyleParameterRenderExample.png"></image>
+                    </images>
+                </lessonContent>
+                <lessonContent number="2">
+                    <content>
+                        <![CDATA[
+                            From there, you will be able to adjust multiple settings, include the width, height, font size, background colour, padding, margins, etc.
+                        ]]>
+                    </content>
+                </lessonContent>
+                <lessonContent number="3">
+                    <content>
+                        <![CDATA[
+                            Additionally, you can create CSS classes within a .css file, in which you can reference back to them within the individual HTML objects using the className attribute. Using this method can help you change the styling of
+                            multiple HTML objects that share the same className, reducing the amount of debugging and editing. To create them, you must ensure the following format:
+                        ]]>
+                    </content>
+                    <images>
+                        <image number="1" fileName="U1_CssStyleClassExample.png"></image>
+                        <image number="2" fileName="U1_CssStyleClassRenderExample.png"></image>
+                    </images>
+                </lessonContent>
+                <lessonContent number="4">
+                    <content>
+                        <![CDATA[
+                            You can additional add default html objects and adjust their styling as well, within the .css file.
+                        ]]>
+                    </content>
+                    <images>
+                        <image number="1" fileName="U1_CssStyleClassDefaultExample.png"></image>
+                        <image number="2" fileName="U1_CssStyleClassDefaultRenderExample.png"></image>
+                    </images>
+                </lessonContent>
+            </lesson>
+            <lesson number="6" title="Mouse Events">
+                <lessonContent number="1">
+                    <content>
+                        <![CDATA[
+                            To wrap up unit 1, we will introduce you to some mouse events to enhance the website design experience! You can add some functionality with some buttons or HTML elements to do something when your mouse does something. The
+                            following are some of the most common events that you may want to handle
+                            <ul>
+                                <li>onMouseEnter</li>
+                                <li>onMouseOut</li>
+                                <li>onMouseDown</li>
+                                <li>onMouseUp</li>
+                                <li>onMouseOver</li>
+                            </ul>
+                        ]]>
+                    </content>
+                </lessonContent>
+                <lessonContent number="2" title="onMouseEnter/onMouseOver">
+                    <content>
+                        <![CDATA[
+                            Use this Mouse Event when you want to make changes to your design on an html element when the mouse has entered the element area (at least once) or is hovering over the area.
+                        ]]>
+                    </content>
+                    <images>
+                        <image number="1" fileName="U1_onMouseEnterExample.png"></image>
+                        <image number="2" fileName="U1_onMouseEnterRenderExample.gif"></image>
+                    </images>
+                </lessonContent>
+                <lessonContent number="3" title="onMouseDown/onMouseUp">
+                    <content>
+                        <![CDATA[
+                            Use these events when you want to enable some functionality when a user is holding down the mouse, and/or letting go of the mouse (mouse up)
+                        ]]>
+                    </content>
+                    <images>
+                        <image number="1" fileName="U1_onMouseDownExample.png"></image>
+                        <image number="2" fileName="U1_onMouseDownRenderExample.gif"></image>
+                    </images>
+                </lessonContent>
+                <lessonContent number="4">
+                    <content>
+                        <![CDATA[
+                            You are now ready to test your knowledge! Head to quiz section of this course and take Quiz - Unit 1!
+                        ]]>
+                    </content>
+                </lessonContent>
+            </lesson>
+        </unit>
+        <unit number="2" title="Javascript Basics">
+            <unitDescription>
+                <![CDATA[
+                    <strong>Javascript</strong> enables a web developer to add countless customizable functional behaviours to a site. This can involve implement algorithms
+                    to run for a tool, to manipulating elements based on specific button presses, to utilizing AJAX (<i>Learned in <strong>Unit 3</strong>Unit 3</i>) to create
+                    a smooth and responsive web interface. The following topics will be covered within this unit:
+                    <ul>
+                        <li>Creating a javascript file</li>
+                        <li>How to create variables and arrays</li>
+                        <li>How to create functions</li>
+                        <li>Variable types</li>
+                        <li>Accessing the DOM (Document Object Model)</li>
+                        <li>Handling events</li>
+                    </ul>
+                ]]>
+            </unitDescription>
+            <lesson number="1" title="Create Javascript File">
+                <lessonContent number="1">
+                    <content>
+                        <![CDATA[
+                            Creating a javascript file is as easy as creating a file with any name, then add <i>'.js'</i> at the end. (e.g. someFileName.js). No need to add anything within the file just yet...
+                        ]]>
+                    </content>
+                    <images>
+                        <image number="1" fileName="U2_JavascriptFilenameExample.png"></image>
+                    </images>
+                </lessonContent>
+            </lesson>
+            <lesson number="2" title="Variables and arrays">
+                <lessonContent number="1">
+                    <content>
+                        <![CDATA[
+                            Variables and Arrays are essential when creating utilizing Javascript with your web page. They can help store, track, and manipulate pieces of data that you can use. In the following code example
+                            you can create a variable called 'test' that can hold a string, and also create a variable called 'count' to keep count of something. To create these variables, you need to use either of the following
+                            keywords before the variable name:
+                            <ul>
+                                <li>
+                                    <strong>let</strong>
+                                    <ul>
+                                        <li>This keyword is similar to <i>var</i> where it instantiates a variable, however it will only be available to the current scope of code it is in, and not be declared global</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>var</strong>
+                                    <ul>
+                                        <li>This keyword will create a global variable that can be used throughout an entire javascript file</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>const</strong>
+                                    <ul>
+                                        <li>This keyword will create a variable, but you will not be able to change anywhere else in the code. This is helpful to make sure you want to use data that shouldn't ever need to change.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        ]]>
+                    </content>
+                </lessonContent>
+                <lessonContent number="2">
+                    <content>
+                        <![CDATA[
+                            To create an array is also pretty simple in javascript. Simply create a variable, but after the equals sign, use square brackets to create an 'array' and enter data through a 'comma seperated list'.
+                            <br><i><strong>Note:</strong> all of the entries within an array variable must all be of the same <strong>type!</strong></i>
+                        ]]>
+                    </content>
+                    <images>
+                        <image number="1" fileName="U2_JavascriptVarArrayExample.png"></image>
+                    </images>
+                </lessonContent>
+            </lesson>
+            <lesson number="3" title="Variable Types">
+                <lessonContent number="1">
+                    <content>
+                        <![CDATA[
+                            All variables within javascript are built upon <i><strong>types</strong></i>. These types will help with organizing the data that you may want to use/manipulate. The following are some of the most common types used:
+                            <ul>
+                                <li>
+                                    <strong>string</strong>
+                                    <ul>
+                                        <li>This type is used to define words, characters and sets of characters (e.g. "this word is a string")</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>number</strong>
+                                    <ul>
+                                        <li>This type is used to define number arithmatic (e.g. 0, 12, 12.3)</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>object</strong>
+                                    <ul>
+                                        <li>This type is used to define any object within javascript. It is almost like a wild card.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>boolean</strong>
+                                    <ul>
+                                        <li>This type is used to describe logical results (e.g. True, False)</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            These variable types are normally automatically determined by the javascript compiler, so you don't have to also specify what type a variable should be. This does, however, create uncertainty when testing with variables
+                            and a developer may be unsure as to why a variable changed type halfway through a function.
+                        ]]>
+                    </content>
+                    <images>
+                        <image number="1" fileName="U2_JavascriptVarTypesExample.png"></image>
+                    </images>
+                </lessonContent>
+            </lesson>
+            <lesson number="4" title="Functions">
+                <lessonContent number="1">
+                    <content>
+                        <![CDATA[
+                            Functions can help take you website to the next level! Functions created in a javascript file can be linked with an html page, and be used with many events within the web page. For example, if you created a button
+                            within the web page, clicking it can activate a function that will do whatever it was programmed.
+                        ]]>
+                    </content>
+                    <images>
+                        <image number="1" fileName="U2_JavascriptFunctionsExample.png"></image>
+                    </images>
+                </lessonContent>
+                <lessonContent number="2">
+                    <content>
+                        <![CDATA[
+                            This is what the final product would look like:
+                        ]]>
+                    </content>
+                    <images>
+                        <image number="1" fileName="U2_ClickFunctionExample.gif"></image>
+                    </images>
+                </lessonContent>
+            </lesson>
+            <lesson number="5" title="HTML DOM Manipulation">
+                <lessonContent number="1">
+                    <content>
+                        <![CDATA[
+                            In the previous section, there is a brief example of manipulating the DOM (Document Object Model) by changing the innerHTML of a specific DOM element (the div section). Javascript will give you the ability to make these 
+                            changes anywhere within the active DOM (i.e. the active web page). You can add additional HTML objects, or change some text within some specfied elements.
+                        ]]>
+                    </content>
+                </lessonContent>
+                <lessonContent number="2">
+                    <content>
+                        <![CDATA[
+                            The two most common ways of accessing these elements is by using either of these functions:
+                        ]]>
+                    </content>
+                    <images>
+                        <image number="1" fileName="U2_JavascriptDOMExample.png"></image>
+                    </images>
+                </lessonContent>
+                <lessonContent number="3">
+                    <content>
+                        <![CDATA[
+                            Once you have the element in question, you can change the innerHTML, add a .css class, change the styling, get the elements children/parents, or remove the element from the DOM.
+                        ]]>
+                    </content>
+                </lessonContent>
+            </lesson>
+            <lesson number="6" title="HTML DOM Events">
+                <lessonContent number="1">
+                    <content>
+                        <![CDATA[
+                            DOM events are similar to HTML events that include all mouse events within an HTML element. The difference here is that we can specify which events trigger which javascript functions all within the main javascript file. If I were to use the same previous
+                            example with increasing a counter using a button, using this method. It would look something like the following;
+                        ]]>
+                    </content>
+                    <images>
+                        <image number="1" fileName="U2_JavascriptDOMEventExample.png"></image>
+                    </images>
+                </lessonContent>
+                <lessonContent number="2">
+                    <content>
+                        <![CDATA[
+                            This is what the final product would look like:
+                        ]]>
+                    </content>
+                    <images>
+                        <image number="1" fileName="U2_DOMClickFunctionExample.gif"></image>
+                    </images>
+                </lessonContent>
+                <lessonContent number="3">
+                    <content>
+                        <![CDATA[
+                            You are now ready to test your knowledge! Head to quiz section of this course and take Quiz - Unit 2!
+                        ]]>
+                    </content>
+                </lessonContent>
+            </lesson>
+        </unit>
+        <unit number="3" title="XML and AJAX">
+            <unitDescription>
+                <![CDATA[
+                    <strong>XML</strong> and <strong>AJAX</strong> are powerful when used correctly. XML is a markup language to help organize large amounts of data in an
+                    easy to read interface that can be referenced for any application (e.g. store data). AJAX is a web development method to asynchronously manipulate elements within
+                    an HTML page to make the response look 'fast' and 'intuitive'. You will learn the following topics:
+                    <ul>
+                        <li>Create and XML Document</li>
+                        <li>How to create XML tags</li>
+                        <li>How to view XML</li>
+                        <li>How to add XML elements</li>
+                        <li>How does XSD (XML Shema) work</li>
+                        <li>How does XSL (XML Styling) work</li>
+                        <li>How to create an AJAX method</li>
+                        <li>How to create JSON objects</li>
+                    </ul>
+                ]]>
+            </unitDescription>
+            <lesson number="1" title="Create XML Document">
+                <lessonContent number="1">
+                    <content>
+                        <![CDATA[
+                            To create an xml document, it is as easy as creating an empty file with the following name convention (e.g. fileName.xml). Once that is complete, we can begin adding the main content of the xml file.
+                        ]]>
+                    </content>
+                    <images>
+                        <image number="1" fileName="U3_XMLFilenameExample.png"></image>
+                    </images>
+                </lessonContent>
+            </lesson>
+            <lesson number="2" title="XML Tags">
+                <lessonContent number="1">
+                    <content>
+                        <![CDATA[
+                            XML is a type of formatting language to store data to be used in other web pages. It is an alternative to the <strong><i>JSON</i></strong> format. In order to organise all of the data into a readable format,
+                            XML tags are utilized to store the information. Tags will look very similar to that of HTML tags, however, the difference is that for XML tags, they can be named almost anything. It is up to you, the developer,
+                            to decide how you want to set up these tags. A tag hierarchy may need to be created to store information (e.g. Person ---contains---> ((Name --contains--> First Name, Last Name), Age, Height)). See the following
+                            image as an example.
+                        ]]>
+                    </content>
+                </lessonContent>
+                <lessonContent number="2">
+                    <content>
+                        <![CDATA[
+                            <i><strong>Note:</strong> a good rule of thumb is to not make your tag names too long, and to always start the tag name with a lowercase letter. Leave tags that start with an uppercase letter to the "highest level"</i>
+                        ]]>
+                    </content>
+                    <images>
+                        <image number="1" fileName="U3_XMLTagsExample.png"></image>
+                    </images>
+                </lessonContent>
+            </lesson>
+            <lesson number="3" title="View XML File">
+                <lessonContent number="1">
+                    <content>
+                        <![CDATA[
+                            You can either view an XML file within a code editor, or even within an internet browser! Simply open them up using your computers method of choice.
+                        ]]>
+                    </content>
+                    <images>
+                        <image number="1" fileName="U3_XMLViewEditorExample.png"></image>
+                        <image number="2" fileName="U3_XMLViewBrowserExample.png"></image>
+                    </images>
+                </lessonContent>
+            </lesson>
+            <lesson number="4" title="XML Elements">
+                <lessonContent number="1">
+                    <content>
+                        <![CDATA[
+                            XML elements are the contents within each of the tags. They can be another XML tag or just plain text. They're also what specifies the exact heirarchy of the data that it represents. If we look back at a previous image...
+                        ]]>
+                    </content>
+                    <images>
+                        <image number="1" fileName="U3_XMLTagsExample.png"></image>
+                    </images>
+                </lessonContent>
+                <lessonContent number="2">
+                    <content>
+                        <![CDATA[
+                            ...this image displays data for a personal contact. Within the tag "ResumeGeneralContactInfo" there are additional tags that are children of that XML element, such as "fullname, mailing_address, phone_number, email_address".
+                            This is what XML data is useful for, if we use the correct element structure, we can easily read what data we need within a website.
+                        ]]>
+                    </content>
+                </lessonContent>
+            </lesson>
+            <lesson number="5" title="XSD">
+                <lessonContent number="1">
+                    <content>
+                        <![CDATA[
+                            XSD (XML Schema Definition) is used to help validate that a certain XML file (within the same file path) is in the correct format, specified within the .xsd file. This can help ensure that the XML data potentially being received
+                            within a website has the correct format to correctly read the data, otherwise it is rejected. See the following image as an example:
+                        ]]>
+                    </content>
+                    <images>
+                        <image number="1" fileName="U3_XSDExample.png"></image>
+                    </images>
+                </lessonContent>
+                <lessonContent number="2">
+                    <content>
+                        <![CDATA[
+                            Within this file, there are 'xml' tags containing names that start with xs:simpletype, and so on. You will order these tags based on how you want the information to be formatted within the original XML file. These are the most
+                            common types that you should be aware of:
+                            <ul>
+                                <li>
+                                    <strong>simpleType</strong>
+                                    <ul>
+                                        <li>This type is to format a single xml tag with a specific name</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>complexType</strong>
+                                    <ul>
+                                        <li>This type is to format a complex xml tag that may contain additional children xml tags within, and also specify any additional attributes within those xml tags, as well as single xml elements.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>pattern</strong>
+                                    <ul>
+                                        <li>This element is used within a simpletype to match xml content with a specific string pattern. This is used in conjuction with a restriction element.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>restriction</strong>
+                                    <ul>
+                                        <li>This element is used to specify a specific restriction that a piece of xml data must have (e.g. a number must be less than 100, must match a certain string pattern)</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>element</strong>
+                                    <ul>
+                                        <li>This element (also called element) can be used to quickly specify a single xml element with a type (e.g. string, number)</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>sequence</strong>
+                                    <ul>
+                                        <li>This element is used to specify the amount of identical children that a single xml tag may have. Essentially, if there are supposed to be multiple child entries within a parent XML tag</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        ]]>
+                    </content>
+                </lessonContent>
+            </lesson>
+            <lesson number="6" title="XSL">
+                <lessonContent number="1">
+                    <content>
+                        <![CDATA[
+                            XSL (XML Style Language) is another that is used to display XML data in a readable fashion within a browser. It will contain an html section that will be the template for what the data can look like. See the
+                            following image as a base example:
+                        ]]>
+                    </content>
+                    <images>
+                        <image number="1" fileName="U3_XSLExample.png"></image>
+                    </images>
+                </lessonContent>
+            </lesson>
+            <lesson number="7" title="JSON Objects">
+                <lessonContent number="1">
+                    <content>
+                        <![CDATA[
+                            A JSON object is another alternative of storing information within a file to read within a website. It can potentially be easier to read the information compared to XML files. It uses an object-like structure
+                            to display its information, and you can store arrays, strings, other JSON objects. Simply create the JSON object to look like the following example: (NOTE: If you want to use an array, follow the exact format as this image,
+                            but for a single object, just copy the same format from one of the entries)
+                        ]]>
+                    </content>
+                    <images>
+                        <image number="1" fileName="U3_JSONExample.png"></image>
+                    </images>
+                </lessonContent>
+            </lesson>
+            <lesson number="8" title="HTTP Ajax Methods">
+                <lessonContent number="1">
+                    <content>
+                        <![CDATA[
+                            Using an AJAX HTTP method can help make your website look more seemless and very responsive. Essentially, create an AJAX function in javascript will send an asynchronous request to the server to gether information from another
+                            url link (local or from the internet). The basis of the AJAX method is as follows:
+                            <ul>
+                                <li>Create a function that will occur once an HTTP request is made. This function can be in charge of gathering data, manipulating HTML objects based on certain criteria, or updating an online service</li>
+                                <li>Create an XMLHttpRequest() object and add that function when "onReadyStateChange" event will occur</li> 
+                                <li>Send the asynchronous request and let the function take over once the call is a success</li>
+                            </ul>
+                        ]]>
+                    </content>
+                </lessonContent>
+                <lessonContent number="2">
+                    <content>
+                        <![CDATA[
+                            <i><strong>Note:</strong> in order for these AJAX calls to work, the html page must be hosted on a server. This can be done with a local program, or saving the file on a hosted site.</i>
+                        ]]>
+                    </content>
+                </lessonContent>
+                <lessonContent number="3">
+                    <content>
+                        <![CDATA[
+                            You can view the following image as an example of how to make the function...
+                        ]]>
+                    </content>
+                    <images>
+                        <image number="1" fileName="U3_AJAXExample.png"></image>
+                    </images>
+                </lessonContent>
+                <lessonContent number="4">
+                    <content>
+                        <![CDATA[
+                            You are now ready to test your knowledge! Head to quiz section of this course and take Quiz - Unit 3!
+                        ]]>
+                    </content>
+                </lessonContent>
+            </lesson>
+        </unit>
+    </units>
+    <quizzes>
+        <quiz unit="1">
+            <question number="1">
+                <questionText><![CDATA[To create an HTML file, you don't need to set an <!DOCTYPE html> tag to start displaying content.]]></questionText>
+                <answer1>True</answer1>
+                <answer2>False</answer2>
+                <correctAnswer>2</correctAnswer>
+            </question>
+            <question number="2">
+                <questionText><![CDATA[When creating a hyperlink, what should be in the target parameter to open the new url on a seperate tab? (e.g. target='')]]></questionText>
+                <answer1>_newWindow</answer1>
+                <answer2>_self</answer2>
+                <answer3>_blank</answer3>
+                <answer4>None of the above</answer4>
+                <correctAnswer>3</correctAnswer>
+            </question>
+            <question number="3">
+                <questionText><![CDATA[What is the correct way to create a button in html?]]></questionText>
+                <answer1><![CDATA[<button onClick='someFunction(this)'></button>]]></answer1>
+                <answer2>var button = new Button();</answer2>
+                <answer3>button = new Button(html.id);</answer3>
+                <answer4>None of the above</answer4>
+                <correctAnswer>1</correctAnswer>
+            </question>
+            <question number="4">
+                <questionText><![CDATA[Which method is the correct way to create a css class in a .css file?]]></questionText>
+                <answer1><![CDATA[myCssClass {<br>width: 100%;<br>font-size:16px;<br>}]]></answer1>
+                <answer2><![CDATA[.myCssClass {<br>width: 100%;<br>font-size:16px;<br>}]]></answer2>
+                <answer3><![CDATA[myCssClass (<br>width: 100%;<br>font-size:16px;<br>)]]></answer3>
+                <answer4>myCssClass = new Css(width: 100%, font-size: 16px);</answer4>
+                <correctAnswer>2</correctAnswer>
+            </question>
+            <question number="5">
+                <questionText><![CDATA[Mouse Events can be useful for changing HTML elements and their styles dynamically, based on the location of the mouse, and the actions of the mouse.]]></questionText>
+                <answer1>True</answer1>
+                <answer2>False</answer2>
+                <correctAnswer>1</correctAnswer>
+            </question>
+        </quiz>
+        <quiz unit="2">
+            <question number="1">
+                <questionText><![CDATA[In order to create a javascript file, you need to be sure to import the file itself in the very beginning (e.g. import * from 'filename']]></questionText>
+                <answer1>True</answer1>
+                <answer2>False</answer2>
+                <correctAnswer>2</correctAnswer>
+            </question>
+            <question number="2">
+                <questionText><![CDATA[Which of the following is an example of a correctly, created variable:]]></questionText>
+                <answer1>let myVar = 2;</answer1>
+                <answer2>var myVar = 2;</answer2>
+                <answer3>const myVar = 2;</answer3>
+                <answer4>All of the above</answer4>
+                <correctAnswer>4</correctAnswer>
+            </question>
+            <question number="3">
+                <questionText><![CDATA[You MUST specify the type of variable you are creating, when first instantiating a variable.]]></questionText>
+                <answer1>True</answer1>
+                <answer2>False</answer2>
+                <correctAnswer>2</correctAnswer>
+            </question>
+            <question number="4">
+                <questionText><![CDATA[Which of the following is a correct method of declaring a function?]]></questionText>
+                <answer1><![CDATA[function() = {console.log('Do something');}]]></answer1>
+                <answer2><![CDATA[function() {<br>console.log('Do something');<br>return 'test';<br>}]]></answer2>
+                <answer3><![CDATA[() = {return null;}]]></answer3>
+                <answer4><![CDATA[var function = {console.log('Do something');}]]>]></answer4>
+                <correctAnswer>2</correctAnswer>
+            </question>
+            <question number="5">
+                <questionText><![CDATA[You can grab an element from the web DOM by declaring <code>document.getElementById('id')</code>]]></questionText>
+                <answer1>True</answer1>
+                <answer2>False</answer2>
+                <correctAnswer>1</correctAnswer>
+            </question>
+        </quiz>
+        <quiz unit="3">
+            <question number="1">
+                <questionText><![CDATA[XML is the <strong>ONLY</strong> method of storing information on the web.]]></questionText>
+                <answer1>True</answer1>
+                <answer2>False</answer2>
+                <correctAnswer>2</correctAnswer>
+            </question>
+            <question number="2">
+                <questionText><![CDATA[Which one of the answers is a correct way of naming a tag?]]></questionText>
+                <answer1><![CDATA[<></>]]></answer1>
+                <answer2><![CDATA[<__88893jif></__88893jif>]]></answer2>
+                <answer3><![CDATA[<canadian_person></canadian_person>]]></answer3>
+                <answer4>None of the above</answer4>
+                <correctAnswer>3</correctAnswer>
+            </question>
+            <question number="3">
+                <questionText><![CDATA[Having an XSD file within the same directory as an XML file is very helpful in validating that all XML files within the same directory have the correct format.]]></questionText>
+                <answer1>True</answer1>
+                <answer2>False</answer2>
+                <correctAnswer>1</correctAnswer>
+            </question>
+            <question number="4">
+                <questionText><![CDATA[JSON Objects are the exact same as XML objects]]></questionText>
+                <answer1>True</answer1>
+                <answer2>False</answer2>
+                <correctAnswer>2</correctAnswer>
+            </question>
+            <question number="5">
+                <questionText><![CDATA[To make an AJAX can, you need to ensure that your site is hosted on a server, otherwise the asynchronous calls will not work.]]></questionText>
+                <answer1>True</answer1>
+                <answer2>False</answer2>
+                <correctAnswer>1</correctAnswer>
+            </question>
+        </quiz>
+    </quizzes>
+</course>

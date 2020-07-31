@@ -1,0 +1,1 @@
+Within this folder, we will save the images that SME's will want to use to display images within lessons

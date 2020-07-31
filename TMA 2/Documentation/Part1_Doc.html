@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<!--
+	This is the documentation for part 1 of the assignment.
+	The following is required:
+	- your description of the assignment project and requirements
+	- your analysis and design of the web application
+	- documentation of your implementation
+	- a guide for users (your tutor who will mark the assignment) to set up, to run, and to use the web application
+	- a link to the web applications you design for the project
+	- anything else you want to say to your tutor
+-->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+        <title>TMA 2 - Part 1 Documentation</title>
+        <link rel="stylesheet" type="text/css" href="../shared/Template_CSS.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Barlow:400,500,600,700,900&display=swap" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet"/>
+    </head>
+    <body>
+        <header class="fixed">
+            <div class="topRowHeader">
+                <div class="container container-fluid topRowContainer">
+                    <div class="topRowItem">
+                        <strong>B.O.A.T.com</strong> - Welcome to B.O.A.T.com!
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar-container">
+                <a class="navbar-itemlogo" href="../tma2.html">
+                    <img class="brand-logo" src="../shared/images/COMP466Logo.png"/>
+                </a>
+                <div class="container container-fluid">
+                    <div class="navbar-itemscontainer">
+                        <div class="navbar-item">
+                            <a class="navbar-link" href="../tma2.html">Home</a>
+                        </div>
+                        <div class="navbar-item navbar-item-dropdown">
+                            <a class="navbar-link" href="">Documentation</a>
+                            <div class="navbar-dropdown">
+                                <a class="navbar-dropdownitem" href="">Part 1</a>
+                                <a class="navbar-dropdownitem" href="Part2_Doc.html">Part 2</a>
+                            </div>
+                        </div>
+                        <div class="navbar-item navbar-item-dropdown">
+                            <a class="navbar-link" href="">Site Links</a>
+                            <div class="navbar-dropdown">
+                                <a class="navbar-dropdownitem" href="../part1/Index.html">Part 1 - Bookmark Site</a>
+                                <a class="navbar-dropdownitem" href="../part2/Index.html">Part 2 - Tutorials Full</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div id="main_content" class="mainBodyContainer">
+			<div class="main-title">
+				<h1>Assignment 2 - Part 1 Documentation</h1>
+			</div>
+			<h2>Description and Requirements</h2>
+            <p>This part of the assignment involves creating a bookmark manager site.</p>
+            <p>
+                <h3>Here are the following requirements:</h3>
+                <ul>
+                    <li>The web application should have a good thoughtful interface, with menus and/or navigation buttons.</li>
+                    <li>It should have a name or logo shown across all the pages.</li>
+                    <li>It should begin with a welcome or greeting message and a list of ten most popular websites that users of the web application have bookmarked.</li>
+                    <li>Once signed in, a list of bookmarks the user has made should be displayed, and the user can browse any web site in the list in a new browser tab or window by clicking a link to the site.</li>
+                    <li>The user can add new websites to the list and edit and delete any of the existing ones in the list.</li>
+                    <li>When adding or editing, user input needs to be validated using JavaScript, to make sure the URLs are not only correct but also active.</li>
+                </ul>
+            </p>
+			<hr>
+            <h2>Design and Analysis</h2>
+            <h3>Main Site (Single page design)</h3>
+			<p>
+                The layout of the site will remain as a "single page". All of the functionality (buttons, bookmark list items) will remain in a centralized site to reduce complexity and maintain simplicity. On the main page,
+                there will be buttons used for signing up/logging in/signing out on the top right of the page. This is to keep it away from the main content within the center of the page. The main content of the page will include 
+                a large space to place a list of bookmarks visible for the user.
+            </p>
+            <h3>Bookmarks</h3>
+            <p>
+                There will be 2 types of bookmarks. 1 version where a general user (not signed in) first visits the site and sees the top 10 bookmarks on the site, and a logged in user, viewing all of their bookmarks. For the guest
+                user, each bookmark in the bookmark list will only display the rank of the bookmark, the number of users using the bookmark, and the bookmark url, which can still be used by any user. The 2nd design for the logged in user
+                bookmark (for each bookmark in the bookmark list) will include a name of the bookmark, the bookmark url, and an edit and delete button. An "Add Bookmark" button should be shown nearby this list.
+            </p>
+            <h3>Database</h3>
+            <p>
+                The database for this website will consist of only 2 tables. 1 table for managing the user accounts, and another table for managing bookmarks created (and assigned to) users. The table layout will look like the following:
+                <ul>
+                    <strong>Table: Users</strong>
+                    <li>username: varchar (Primary key)</li>
+                    <li>password: varchar</li>
+                </ul>
+                <ul>
+                    <strong>Table: Bookmarks</strong>
+                    <li>username: varchar (1st Primary Key, Foreign Key from table "Users")</li>
+                    <li>bookmarkName: varchar (2nd Primary Key)</li>
+                    <li>bookmarkUrl: varchar</li>
+                </ul>
+            </p>
+            <p>
+                Whenever a user signs up, an <strong>INSERT</strong> call will be made to the databse and the username and password will be saved within the table. Whenever a user logs in, a <strong>SELECT</strong> query will be made to the Users database to verify the
+                username and password. Whenever a user adds a bookmark, an <strong>INSERT</strong> query call will be made to the Bookmarks table. If the user edits one of the existing bookmarks, and <strong>UPDATE</strong> query call will be made to the Bookmarks table.
+                Finally, if a user wants to delete a bookmark from the list, an <strong>DELETE</strong> query will be made to the Bookmarks table.
+            </p>
+			<hr>
+            <h2>Implementation</h2>
+            <p>
+                This project was made with using html, javascript, php, css, and MySQL. All of these languages helped create the site page , layout (html), contact with the server and handle server side calls (php), create a database to store user and bookmark information (MySQL), handle any button actions
+                and prompt dialog states (javascript), and finally create unique styling that is used throughout the site (css). 
+            </p>
+            <h3>File Structure</h3>
+            <p>
+                <h3>The entire project has the following file structure</h3>
+                <ul>
+                    <li><strong>images</strong> - this is a folder that will store any icons and images used throughout the site page</li>
+                    <li>BookmarkSite.js - the javascript file to handle button actions and dialog prompt states</li>
+                    <li>BookmarkSite.php - this .php file will also contain the .html for the site page layout</li>
+                    <li>BookmarkStyle.css - this .css file will only contain styles that are used only within this site. Any other styles will come from the share .css style file within the <strong>shared</strong> folder</li>
+                    <li>Database.sql - this is the .sql file to run in order to create the database within MySQL. Use either the MySQL Workbench or Command Line dialog to run the script to create the database and its corresponding tables</li>
+                </ul>
+            </p>
+            <h3>Database Handlers</h3>
+			<p>
+                Once the database is created, functions within the .php portion of the <strong><i>BookmarkSite.php</i></strong> file were created to make the connection and use of the MySQL database easier. In the beginning of the .php portion, a call to connect to the database
+                (e.g. mysqli_connect()) is made to connect to the database, then another function (e,g ,mysqli_select_db()) is called to connect to the specific database within the database server. Also within the beginning portion of the .php section, multiple .php functions were
+                created to make query calls easier to MySQL. The following functions were created:
+                <ul>
+                    <li>selectQueryBuilder($database, $tableName, $fields, $condition) - This function will required the tablename to query, the fields required to return, and any potential conditions (WHERE, ORDERBY, GROUP BY) to add to the query string. It will return all of the results</li>
+                    <li>insertQueryBuilder($database, $tableName, $valueFields, $values) - An insert query function, that requireds the table name, the table value fields to insert to, and the values to insert. This will create the insert query string and return true if the query is successful or false otherwise</li>
+                    <li>deleteQueryBuilder($database, $tableName, $condition) - An delete query function that requires the tablename from where the data is to be deleted from, and the condition (e.g. username = 'roy') to select what information to delete</li>
+                    <li>updateQueryBuilder($database, $tableName, $updateValues, $condition) - An update query function that requires the table name, the update values (e.g. username = 'newUserName', password = 'newPassword'), and the condition (username = 'someUserName')</li>
+                    <li>checkUserExists($database, $username) - a simple function to quickly check if a user exists within the database tablename Users. Will return either true or false</li>
+                </ul>
+            </p>
+            <p>
+                <i><strong>NOTE: </strong> there is no scenario planned for a user to update their password within the site in order to reduce complexity and was not explicity part of the requirements. This can be an enhancement in potential future versions of the site.</i>
+            </p>
+            <h3>PHP and Javascript</h3>
+            <p>
+                Both the <i>BookmarkSite.js</i> and <i>BookmarkSite.php</i> files handle how the overlay prompt within the site is displayed. The overlay prompt is the dialog that will show up in the middle of the site screen to potentially ask the user for some input. This can be for when the site requests a log in, a sign up, adding a bookmark and/or editing
+                a bookmark. A single overlay html div object is shared amoungst these different scenarios, and the .php and .js files will be in charge of what content to display within the overlay. Within the <i>BookmarkSite.js</i> file, a state management approach is utilized. It can be described as follows:
+                <ul>
+                    A variable called <strong>DIALOG_STATE</strong> is created and will contain either of the following states
+                    <li>LOGIN_STATE - This state is to show the user input contents for Logging In a user</li>
+                    <li>SIGNUP_STATE - This state is to show the user input contents for signing up a user</li> 
+                    <li>BOOKMARK_ADD_STATE - This state is to show the user input contents for adding a bookmark</li>
+                    <li>BOOKMARK_EDIT_STATE - This state is to show the user input contents for editing an existing bookmark</li>
+                </ul>
+                All the developer has to do is set the <strong>DIALOG_STATE</strong> to anyone of these states, and then call an <strong><i>updateUIState()</i></strong> function hide all other dialog contents, and only show the contents related to the specified state.
+                
+                In order to showcase any potential errors that may have occured through the server, the <i>BookmarkSite.php</i> file will be incharge of displaying the error message within the dialog prompt.
+            </p>
+            <p>
+                In the <i>BookmarkSite.php</i> file, how the information is passed through to the server is the use of forms. These forms will contain submit type buttons that will submit any information within the form to the server, for the .php file to then process however it is programmed to. Multiple forms were created:
+                <ul>
+                    <li>Log In Form - This form will require a username input, a password input, and a submit button to check if the user and password match any existing user data within the MySQL database server</li>
+                    <li>Sign Up Form - This form will require the username input, a fullname input, and 2 password inputs (for verification), and a submit button to add the user to the database if the information enterd is valid and the username doesn't already exist</li>
+                    <li>Add/Edit bookmark form - This form will require the bookmark name input, the bookmark url input, and either the edit submit button, or the add submit button (this is determined by what state the dialog is in)</li>
+                    <li>Delete bookmark form - This form will only have a delete submit button and 2 hidden inputs (1 for the bookmark name, 1 for the bookmark url). This form is to be located within the bookmark list item</li>
+                </ul>
+                <i><strong>NOTE: </strong> These forms can be found in the BookmarkSite.php file.</i>
+                The .php file will also handle showcasing any errors. There is a shared html div element with id "feedbackDiv" that will show any error message that may have occured. In order to show this, there is a .php variable ($promptFeedbackMessage) that is within the print string for creating the div element where it will fill in the element with a text string and the message. An
+                additional .php variable ($promptFeedbackStyle) will also replace the styling to showcase the error.
+            </p>
+            <p>
+                Now how does the .php file check to see what information has been sent to the user. Simply it will use the isset() function to check which button name was submited (e.g. deleteButton, addBookmarkButton, signupButton, editBookmarkButton, loginButton) and then handle the response accordingly. The following is the list of button presses that are
+                kept track of and what the .php file will do
+                <ul>
+                    <li>
+                        <strong>isset($_POST["login_entered"])</strong> - This checks if the user is logging into the site. If this is true, the serve will query the MySQL database to check if the user credentails are correct
+                        <ul>
+                            <li>Error Handling: .php will check if the username exists, and if the password is correct. An error message may display stating the username doesn't exist, or the password is incorrect.</li>
+                            <li>If there are <strong>NO</strong> errors: the .php code will save some of the user information within its cookies to then be managed by the .php code to showcase contents only when a user is logged in. (e.g. setcookie("loggedIn", true), setcookie("username", $user_login_username), setcookie("fullname", $row["fullname"]))</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>isset($_POST["signup_entered"])</strong> - This checks if the user was in the signing up prompt, entered their information, and clicked the "sign up" button.
+                        <ul>
+                            <li>Error Handling: .php will check if the username exists and if the 2 passwords entered matched. Then .php will display any of the errors accordingly within the prompt.</li>
+                            <li>If there are <strong>NO</strong> errors: the .php code will then insert the username, password into the MySQL database server.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>isset($_POST["edit_bookmark_add"])</strong> - This checks if a user is logged in and clicks the "add bookmark" button, enters the information within the bookmark dialog, and clicks the "Save" button
+                        <ul>
+                            <li>Error Handling: .php will check if the bookmarkName doesnt already exist within the users own bookmarks and check if the url is valid and active</li>
+                            <li>If there are <strong>NO</strong> errors: the .php code will then insert the bookmark name, url, and the username adding the bookmark into the MySQL database</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>isset($_POST["edit_bookmark_update"])</strong> - This checks if a user is logged in and clicks the edit button on any of the bookmark items, changes the bookmark information within the dialog prompt, and clicks "Edit"
+                        <ul>
+                            <li>Error Handling: .php will check if the updated bookmark url is valid and active, check if there either of the bookmark name or bookmark url information changed, check if the new updated bookmark name doesn't already exist within the list of bookmarks the user has</li>
+                            <li>If there are <strong>NO</strong> errors: the .php code will then call an update query to update the existing bookmark information (based on username, bookmarkname KEY) with the new bookmark name and/or bookmark url</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>isset($_POST["deleteBookmark"])</strong> - This checks if one of the users' bookmarks needs to be deleted by clicking the delete button. The .php file will call the delete query and remove the bookmark based on its name, url, and the username.
+                    </li>
+                </ul>
+            </p>
+            <p>
+                Cookies are used within the .php site to help the site determine if a user is logged in or not. This will help showcase either the users bookmarks, or showcase the top 10 bookmarks stored within the site.
+            </p>
+            <h3>Signing Out</h3>
+            <p>
+                If the user clicks on the <strong>Sign Out</strong> button, javascript will then call a signout() function and remove all of the cookies set within the site.
+            </p>
+			<hr>
+            <h2>User Guide</h2>
+            <h3>Signing up/Logging In</h3>
+			<p>
+                The user interface was built with simplicity in mind. To first go to the site, go to this URL: <a>Insert Hosted Site</a>. From there, a greeting will welcome you. To sign up for the site (for the first time), look to the
+                top right of the site, and you will see the <strong>Log In</strong> and <strong>Sign Up</strong> buttons. Simply click the Sign Up button, enter the information displayed and click sign up. If successful, the page will reload,
+                showing a personalized list of bookmarks (there shouldn't be any if its your first time signing in).
+            </p>
+            <p>
+                <i><strong>NOTE: </strong>remember your username and password to sign back into the site in case of anything.</i>
+            </p>
+            <p>
+                <strong>If</strong> you already have an account, just click the <strong>Log In</strong> button on the top right, enter your credentials then click Log In. Any errors with either method of signing in will show up within the Sign Up/Log In window.
+                To sign out, after you are logged in, click the <strong>Sign Out</strong> button on the top right.
+            </p>
+            <h3>Bookmarks</h3>
+            <p>
+                Adding, removing, editing and using bookmarks are also easy. Once you have logged in to your account, the main page will showcase all of your bookmarks you have saved (if its your first time, a single square will be visible, telling to start creating bookmarks by
+                click the "add bookmark" button on the top left). Once you click "add bookmark" a prompt will show and fill in the inputs (e.g. Name, Url) and click "Save" to save the bookmark. You will now notice a new bookmark in the list within the main page.
+            </p>
+            <p>
+                <strong>Editing</strong> and <strong>Deleting</strong> bookmarks are also easy. You will notice 2 icons to the right of the bookmark button. The "pencil" is the <i>edit button</i> and the "trash can" is the <i>delete button</i>. To <strong>delete</strong> a bookmark, simply click the trash can, and thats it. To <strong>edit</strong>
+                click the pencil icon and then a prompt will display, showing the current information of the bookmark. Make any changes necessary, then click the "edit" button. 
+            </p>
+            <p>
+                To view any of the websites that are within the bookmarks (both on your page, or from the general page), hover over the url within the bookmark and click it. It will open a new window with the desired site.
+            </p>
+			<hr>
+			<h2>Link</h2>
+			<p>Click the link either in the "Links" tab on the navigation bar, or here: <a href="../part1/Index.html">Part 1 - Bookmark Site</a></p>
+			</br>
+			<h2>Extra Notes for Tutor</h2>
+			<p>
+                To access this site on the web, go to this address: <strong><i>Enter the address once it is deployed</i></strong>
+            </p>
+            <p>
+                If you are to test this on your own server and MySQL database, please ensure that you run the Database.sql script in order to create the database and the necessary tables.
+            </p>
+        </div>
+    </body>
+</html>
+<script>
+</script>

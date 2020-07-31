@@ -1,0 +1,254 @@
+:root {
+    --overlay-delay: 0.5s; /*Must match the overlay amount in the .js OverlayFadeOut function*/
+    --prompt-border-radius: 35px;
+    --bookmark-icon-size: 20px;
+    --hover-animation-duration: 0.3s;
+}
+
+/* The following area is for all of the bookmark page styles */
+.headerButtonContainer {
+    display: flex;
+    flex-direction: row;
+    align-content: flex-end;
+    height: 35px;
+}
+
+.right {
+    float: right;    
+}
+
+.left {
+    float: left;
+}
+
+.overlayContainer {
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    width: 75%;
+    margin: 0 auto;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #05668D;
+    border-radius: calc(var(--prompt-border-radius) - 5px);
+}
+
+.overlay {
+    z-index: 5;
+    position: fixed;
+    display: none;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background-color: rgba(0, 0, 0, 0.2); */
+    overflow-x: hidden;
+    backdrop-filter: blur(5px);
+    transition: opacity var(--overlay-delay);
+    opacity: 0;
+}
+
+.centerChildElements {
+    flex-direction: column;
+    justify-content: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.promptBox {
+    width: 100%;
+    background-color: white;
+    border-radius: var(--prompt-border-radius);
+    box-sizing: border-box;
+    margin: 35px;
+}
+
+.contentContainer {
+    padding: 15px 0px;
+}
+
+.closeIconContainer {
+    width: 50px;
+    position: absolute;
+    left: calc(100% - 50px);
+}
+
+.closeIconButton {
+    cursor: pointer;
+    font-size: 40px;
+    color: white;
+    transition: text-shadow var(--hover-animation-duration);
+}
+
+.closeIconButton:hover {
+    text-shadow: 0 0 5px white;
+}
+
+.closeButton {
+    width: 12px;
+}
+
+.userInputButtonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.userInputButton {
+    background-color: #EFEFEF;
+    color: black;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    padding: 5px 10px 5px 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color var(--hover-animation-duration);
+    display: initial;
+    flex-direction: column;
+    justify-content: center;
+    white-space: nowrap;
+    margin: 0 5px;
+}
+
+.userInputButton:hover {
+    background-color: #C4C4C4;
+}
+
+.introTitle {
+    font-size: 34px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.introText {
+    margin-bottom: 20px;
+    padding: 0px 10px;
+}
+
+.userInputContainer {
+
+}
+
+.singleInputContainer {
+    margin-bottom: 10px;
+}
+
+.userInputBox {
+
+}
+
+.feedbackMessageBox {
+
+}
+
+.bookmarkListContainer {
+    border: 5px solid #05668D;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    max-height: 488px;
+    border-radius: 10px;
+    background-color: #05668D;
+    padding: 15px;
+    margin: 0 auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.bookmarkItemContainer {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    padding: 10px 15px;
+    margin: 5px 0;
+    transition: transform var(--hover-animation-duration);
+}
+
+.bookmarkItemContainer:hover {
+    transform: scale(1.03);
+}
+
+.bookmarkItemInfo {
+    width: 80%;
+}
+
+.bookmarkNameStyle {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.bookmarkUrlStyle {
+    width: fit-content;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color var(--hover-animation-duration);
+}
+
+.bookmarkUrlStyle:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.bookmarkUrlStyle:active {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.bookmarkButtonsContainer {
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.bookmarkButtonItem {
+    box-sizing: initial;
+    width: var(--bookmark-icon-size);
+    height: var(--bookmark-icon-size);
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color var(--hover-animation-duration);
+    border: 0;
+}
+
+.bookmarkButtonItem:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.bookmarkButtonItem:active {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.bookmarkButtonImage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0.6;
+    transition: opacity 0.4s;
+}
+
+.bookmarkButtonImage:active {
+    opacity: 1;
+}
+
+.bookmarkUserCountText {
+    margin-left: 15px;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 300;
+}
