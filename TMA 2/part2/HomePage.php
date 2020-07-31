@@ -104,9 +104,9 @@
                 $username = "jmramirez@au-comp466-assignment2-server";
                 $password = "Passw0rd";
                 $DATABASE_NAME = "BoatOnlineCourses";
-                $cookie_domain = "au-comp466-assignment2-web.azurewebsites.net";
+                $cookie_domain = "https://au-comp466-assignment2-web.azurewebsites.net";
                 // $cookie_domain = "localhost";
-                $cookie_path = "/";
+                $cookie_path = "/TMA$202/part2";
                 $CONST_DISPLAY_BLOCK = "style=\"display:block;\"";
                 $CONST_DISPLAY_NONE = "style=\"display:none;\"";
                 $CONST_DISPLAY_OPACITY_FLEX = "style=\"display:flex; opacity: 1;\"";
