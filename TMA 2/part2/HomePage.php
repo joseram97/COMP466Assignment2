@@ -134,8 +134,9 @@
 
                 $webDatabase = mysqli_init();
 
-                if (!(mysqli_real_connect($webDatabase, $servername, $username, $password, $DATABASE_NAME, 3306))) {
-                    die("Unable to connect to the MySQL database");
+                mysqli_real_connect($webDatabase, $servername, $username, $password, $DATABASE_NAME, 3306);
+                if (mysqli_connect_errno($webDatabase)) {
+                    die('Failed to connect to MySQL: '.mysqli_connect_error());
                 }
 
                 // Get the database with all of the valid tables
