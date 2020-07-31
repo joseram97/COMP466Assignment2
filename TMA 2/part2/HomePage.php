@@ -14,6 +14,7 @@
     // if ($_COOKIE["loggedIn"] == true) {
     //     header("Location: HomePage.php");
     // }
+    ob_start();
 ?>
 <!DOCTYPE html>
 <!--This is the main page for the first assignment. Create the welcome page and enable all of the navigation-->
@@ -179,6 +180,7 @@
                                 setcookie("username", $user_login_username, time()+3600, $cookie_path);
                                 setcookie("fullname", $row["fullname"], time()+3600, $cookie_path);
                                 setcookie("usertype", $row["userType"], time()+3600, $cookie_path);
+                                ob_end_flush();
 
                                 header("Location: HomePage.php");
                             }
