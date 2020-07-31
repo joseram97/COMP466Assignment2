@@ -132,14 +132,16 @@
                 error_reporting(E_ERROR | E_PARSE);
                 // error_reporting(1);
 
-                if (!($webDatabase = mysqli_connect($servername, $username, $password))) {
+                $webDatabase = mysqli_init();
+
+                if (!(mysqli_real_connect($webDatabase, $servername, $username, $password, $DATABASE_NAME, 3306))) {
                     die("Unable to connect to the MySQL database");
                 }
 
                 // Get the database with all of the valid tables
-                if (!(mysqli_select_db($webDatabase, $DATABASE_NAME))) {
-                    die("Unable to access the BoatOnlineCourses database. Perhaps it needs to be created?");
-                }
+                // if (!(mysqli_select_db($webDatabase, $DATABASE_NAME))) {
+                //     die("Unable to access the BoatOnlineCourses database. Perhaps it needs to be created?");
+                // }
 
                 // Set up all of the call responses based on the events triggered within the html page. The majority of this site will remain on a single page
                 if (isset($_POST["login_entered"])) {
