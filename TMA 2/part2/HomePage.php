@@ -180,6 +180,8 @@
                                 setcookie("fullname", $row["fullname"], time()+3600, $cookie_path);
                                 setcookie("usertype", $row["userType"], time()+3600, $cookie_path);
 
+                                die ("changing the cookie");
+
                                 header("Location: HomePage.php");
                             }
                             else {
