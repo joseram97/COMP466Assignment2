@@ -14,7 +14,6 @@
     // if ($_COOKIE["loggedIn"] == true) {
     //     header("Location: HomePage.php");
     // }
-    ob_start();
 ?>
 <!DOCTYPE html>
 <!--This is the main page for the first assignment. Create the welcome page and enable all of the navigation-->
@@ -176,6 +175,7 @@
                             // Check that the password matches
                             if ($row["password"] == $user_login_password) {
                                 // login the user
+                                ob_start();
                                 setcookie("loggedIn", true, time()+3600, $cookie_path);
                                 setcookie("username", $user_login_username, time()+3600, $cookie_path);
                                 setcookie("fullname", $row["fullname"], time()+3600, $cookie_path);
