@@ -48,14 +48,14 @@ function signout() {
     // clear the cookies and send the user back to the default site
     let pastDate = new Date();
     pastDate.setTime(pastDate.getTime() + -1*24*60*60*1000);
-    document.cookie = `loggedIn=; expires=${pastDate.toUTCString()};
-                       username=; expires=${pastDate.toUTCString()};
-                       fullname=; expires=${pastDate.toUTCString()};
-                       courseSelected=false; expires=${pastDate.toUTCString()};
-                       courseid=; expires=${pastDate.toUTCString()};
-                       unitSelected=false; expires=${pastDate.toUTCString()};
-                       unitNum=; expires=${pastDate.toUTCString()};
-                       quizSelected=false; expires=${pastDate.toUTCString()};
+    document.cookie = `loggedIn=; expires=${pastDate.toUTCString()}; path="/";
+                       username=; expires=${pastDate.toUTCString()}; path="/";
+                       fullname=; expires=${pastDate.toUTCString()}; path="/";
+                       courseSelected=false; expires=${pastDate.toUTCString()}; path="/";
+                       courseid=; expires=${pastDate.toUTCString()}; path="/";
+                       unitSelected=false; expires=${pastDate.toUTCString()}; path="/";
+                       unitNum=; expires=${pastDate.toUTCString()}; path="/";
+                       quizSelected=false; expires=${pastDate.toUTCString()}; path="/";
                        quizid=; expires=${pastDate.toUTCString()};`;
     window.location = "HomePage.php";
 }
