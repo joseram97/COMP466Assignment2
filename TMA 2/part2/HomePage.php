@@ -101,7 +101,7 @@
             <?php
                 // Set up any constants that may be used throughout the program
                 $servername = "au-comp466-assignment2-server.mysql.database.azure.com";
-                $username = "jmramirez";
+                $username = "jmramirez@au-comp466-assignment2-server";
                 $password = "Passw0rd";
                 $DATABASE_NAME = "BoatOnlineCourses";
                 $CONST_DISPLAY_BLOCK = "style=\"display:block;\"";
