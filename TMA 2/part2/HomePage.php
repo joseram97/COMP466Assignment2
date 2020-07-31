@@ -162,10 +162,14 @@
                             // Check that the password matches
                             if ($row["password"] == $user_login_password) {
                                 // login the user
-                                setcookie("loggedIn", true, time()+3600*24*30, $cookie_path, $cookie_domain);
-                                setcookie("username", $user_login_username, time()+3600*24*30, $cookie_path, $cookie_domain);
-                                setcookie("fullname", $row["fullname"], time()+3600*24*30, $cookie_path, $cookie_domain);
-                                setcookie("usertype", $row["userType"], time()+3600*24*30, $cookie_path, $cookie_domain);
+                                // setcookie("loggedIn", true, time()+3600*24*30, $cookie_path, $cookie_domain);
+                                // setcookie("username", $user_login_username, time()+3600*24*30, $cookie_path, $cookie_domain);
+                                // setcookie("fullname", $row["fullname"], time()+3600*24*30, $cookie_path, $cookie_domain);
+                                // setcookie("usertype", $row["userType"], time()+3600*24*30, $cookie_path, $cookie_domain);
+                                setcookie("loggedIn", true);
+                                setcookie("username", $user_login_username);
+                                setcookie("fullname", $row["fullname"]);
+                                setcookie("usertype", $row["userType"]);
 
                                 header("Location: HomePage.php");
                             }
