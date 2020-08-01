@@ -164,10 +164,14 @@
                             if ($row["password"] == $user_login_password) {
                                 // login the user
                                 ob_start();
-                                setcookie("loggedIn", true, time()+3600, $cookie_path);
-                                setcookie("username", $user_login_username, time()+3600, $cookie_path);
-                                setcookie("fullname", $row["fullname"], time()+3600, $cookie_path);
-                                setcookie("usertype", $row["userType"], time()+3600, $cookie_path);
+                                // setcookie("loggedIn", true, time()+3600, $cookie_path);
+                                // setcookie("username", $user_login_username, time()+3600, $cookie_path);
+                                // setcookie("fullname", $row["fullname"], time()+3600, $cookie_path);
+                                // setcookie("usertype", $row["userType"], time()+3600, $cookie_path);
+                                setcookie("loggedIn", true);
+                                setcookie("username", $user_login_username);
+                                setcookie("fullname", $row["fullname"]);
+                                setcookie("usertype", $row["userType"]);
                                 ob_end_flush();
 
                                 header("Location: HomePage.php");
