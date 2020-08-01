@@ -143,11 +143,6 @@
                     die('Failed to connect to MySQL: '.mysqli_connect_error());
                 }
 
-                // Get the database with all of the valid tables
-                // if (!(mysqli_select_db($webDatabase, $DATABASE_NAME))) {
-                //     die("Unable to access the BoatOnlineCourses database. Perhaps it needs to be created?");
-                // }
-
                 // Set up all of the call responses based on the events triggered within the html page. The majority of this site will remain on a single page
                 if (isset($_POST["login_entered"])) {
                     // Login the user
@@ -164,10 +159,6 @@
                             if ($row["password"] == $user_login_password) {
                                 // login the user
                                 ob_start();
-                                // setcookie("loggedIn", true, time()+3600, $cookie_path);
-                                // setcookie("username", $user_login_username, time()+3600, $cookie_path);
-                                // setcookie("fullname", $row["fullname"], time()+3600, $cookie_path);
-                                // setcookie("usertype", $row["userType"], time()+3600, $cookie_path);
                                 setcookie("loggedIn", true);
                                 setcookie("username", $user_login_username);
                                 setcookie("fullname", $row["fullname"]);

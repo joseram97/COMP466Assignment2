@@ -84,14 +84,10 @@
 
             $webDatabase = mysqli_init();
 
-            if (!(mysqli_real_connect($webDatabase, $servername, $username, $password, $DATABASE_NAME, 3306))) {
-                die("Unable to connect to the MySQL database");
+            mysqli_real_connect($webDatabase, $servername, $username, $password, $DATABASE_NAME, 3306);
+            if (mysqli_connect_errno($webDatabase)) {
+                die('Failed to connect to MySQL: '.mysqli_connect_error());
             }
-
-            // Get the database with all of the valid tables
-            // if (!(mysqli_select_db($webDatabase, $DATABASE_NAME))) {
-            //     die("Unable to access the BoatOnlineCourses database. Perhaps it needs to be created?");
-            // }
 
             if (isset($_POST["selectUnit"])) {
                 $selectedUserNum = $_POST["unitNumber"];
