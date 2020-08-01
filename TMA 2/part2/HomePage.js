@@ -60,7 +60,7 @@ function signout() {
                        quizid=; expires=${pastDate.toUTCString()};`;
     console.log("the cookie after");
     console.log(document.cookie);
-    window.location = "HomePage.php";
+    // window.location = "HomePage.php";
 }
 
 function updateUIState() {
