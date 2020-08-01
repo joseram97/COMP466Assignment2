@@ -446,7 +446,6 @@
                     }
                     else {
                         print('<h2><strong>Top 10 user saved bookmarks!</strong></h2>');
-                        print("<div>$username, $password, $database</div>");
                         print('<div class="bookmarkListContainer">');
                         $bookmarksResult = selectQueryBuilder($webDatabase, "Bookmarks", "Count(bookmarkUrl) as bookmarkCount, bookmarkUrl", "GROUP BY bookmarkUrl ORDER BY Count(bookmarkUrl) DESC LIMIT 10");
 
