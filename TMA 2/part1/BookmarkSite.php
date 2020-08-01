@@ -1,3 +1,6 @@
+<?php
+    ob_start():
+?>
 <!DOCTYPE html>
 <!--This is the main page for the first assignment. Create the welcome page and enable all of the navigation-->
 <html>
@@ -192,9 +195,11 @@
                             // Check that the password matches
                             if ($row["password"] == $user_login_password) {
                                 // login the user
+                                ob_start();
                                 setcookie("loggedIn", true);
                                 setcookie("username", $user_login_username);
                                 setcookie("fullname", $row["fullname"]);
+                                ob_flush();
                                 header("Location: BookmarkSite.php");
                             }
                             else {
@@ -251,9 +256,11 @@
                             }
                             else {
                                 // success
+                                ob_start();
                                 setcookie("loggedIn", true);
                                 setcookie("username", $user_signup_username);
                                 setcookie("fullname", $user_signup_fullname);
+                                ob_end_flush();
                                 header("Location: BookmarkSite.php");
                             }
                         }
