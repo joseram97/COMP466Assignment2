@@ -68,9 +68,9 @@
             <p>This page will help you manage all of your favorite bookmarks on the web. You can also view some of the most popular bookmarks found on the web based on other users!</p>
             <?php
                 // Set up any constants that may be used throughout the program
-                $servername = "localhost";
-                $username = "jmramirez";
-                $password = "password";
+                $servername = "au-comp466-assignment2-server.mysql.database.azure.com";
+                $username = "jmramirez@au-comp466-assignment2-server";
+                $password = "Passw0rd";
                 $DATABASE_NAME = "bookmarkweb";
                 $CONST_DISPLAY_BLOCK = "style=\"display:block;\"";
                 $CONST_DISPLAY_NONE = "style=\"display:none;\"";
@@ -170,15 +170,11 @@
                 // error_reporting(1);
 
                 // Create the connection
-                // $conn = new mysqli($servername, $username, $password);
+                $webDatabase = mysqli_init();
 
-                if (!($webDatabase = mysqli_connect($servername, $username, $password))) {
-                    die("Unable to connect to the MySQL BookmarksWeb database");
-                }
-
-                // Get the database with all of the valid tables
-                if (!(mysqli_select_db($webDatabase, $DATABASE_NAME))) {
-                    die("Unable to access the database. Perhaps it needs to be created?");
+                mysqli_real_connect($webDatabase, $servername, $username, $password, $DATABASE_NAME, 3306);
+                if (mysqli_connect_errno($webDatabase)) {
+                    die('Failed to connect to MySQL: '.mysqli_connect_error());
                 }
 
                 // Set up all of the call responses based on the events triggered within the html page. The majority of this site will remain on a single page
