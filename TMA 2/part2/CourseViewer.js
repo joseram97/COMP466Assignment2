@@ -33,15 +33,7 @@ function signout() {
     // clear the cookies and send the user back to the default site
     let pastDate = new Date();
     pastDate.setTime(pastDate.getTime() + -1*24*60*60*1000);
-    document.cookie = `loggedIn=; expires=${pastDate.toUTCString()};
-                       username=; expires=${pastDate.toUTCString()};
-                       fullname=; expires=${pastDate.toUTCString()};
-                       courseSelected=false; expires=${pastDate.toUTCString()};
-                       courseid=; expires=${pastDate.toUTCString()};
-                       unitSelected=false; expires=${pastDate.toUTCString()};
-                       unitNum=; expires=${pastDate.toUTCString()};
-                       quizSelected=false; expires=${pastDate.toUTCString()};
-                       quizid=; expires=${pastDate.toUTCString()};`;
+    document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + pastDate.toUTCString() + ";"); });
     window.location = "HomePage.php";
 }
 
