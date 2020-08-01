@@ -64,9 +64,9 @@
         </header>
         <?php
             // Set up any constants that may be used throughout the program
-            $servername = "au-comp466-assignment2-server.mysql.database.azure.com";
-            $username = "jmramirez@au-comp466-assignment2-server";
-            $password = "Passw0rd";
+            $servername = getenv("PHP_MYSQL_DATABASESERVER");
+            $username = getenv("PHP_MYSQL_USERNAME");
+            $password = getenv("PHP_MYSQL_PASSWORD");
             $DATABASE_NAME = "BoatOnlineCourses";
             $CONST_DISPLAY_BLOCK = "style=\"display:block;\"";
             $CONST_DISPLAY_NONE = "style=\"display:none;\"";

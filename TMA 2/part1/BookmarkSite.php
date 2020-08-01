@@ -68,9 +68,9 @@
             <p>This page will help you manage all of your favorite bookmarks on the web. You can also view some of the most popular bookmarks found on the web based on other users!</p>
             <?php
                 // Set up any constants that may be used throughout the program
-                $servername = "au-comp466-assignment2-server.mysql.database.azure.com";
-                $username = "jmramirez@au-comp466-assignment2-server";
-                $password = "Passw0rd";
+                $servername = getenv("PHP_MYSQL_DATABASESERVER");
+                $username = getenv("PHP_MYSQL_USERNAME");
+                $password = getenv("PHP_MYSQL_PASSWORD");
                 $DATABASE_NAME = "bookmarkweb";
                 $CONST_DISPLAY_BLOCK = "style=\"display:block;\"";
                 $CONST_DISPLAY_NONE = "style=\"display:none;\"";
@@ -446,6 +446,7 @@
                     }
                     else {
                         print('<h2><strong>Top 10 user saved bookmarks!</strong></h2>');
+                        print("<div>$username, $password, $database</div>");
                         print('<div class="bookmarkListContainer">');
                         $bookmarksResult = selectQueryBuilder($webDatabase, "Bookmarks", "Count(bookmarkUrl) as bookmarkCount, bookmarkUrl", "GROUP BY bookmarkUrl ORDER BY Count(bookmarkUrl) DESC LIMIT 10");
 
