@@ -1,5 +1,5 @@
 <?php
-    ob_start():
+    ob_start();
 ?>
 <!DOCTYPE html>
 <!--This is the main page for the first assignment. Create the welcome page and enable all of the navigation-->
