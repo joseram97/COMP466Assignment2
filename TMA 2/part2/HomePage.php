@@ -1,19 +1,6 @@
 <?php 
     require "phpLibrary/queryFunctions.php";
     require "phpLibrary/EMLFunctions.php";
-
-    // setcookie("loggedIn", true, time() + 3600, "/");
-    // setcookie("username", "tstUser1", time() + 3600, "/");
-    // setcookie("fullname", "Jeff Bezos", time() + 3600, "/");
-    // setcookie("usertype", "SME", time() + 3600, "/");
-    // setcookie("loggedIn", false, time() + 3600, "/");
-    // setcookie("username", null, time() + 3600, "/");
-    // setcookie("fullname", null, time() + 3600, "/");
-    // setcookie("usertype", null, time() + 3600, "/");
-
-    // if ($_COOKIE["loggedIn"] == true) {
-    //     header("Location: HomePage.php");
-    // }
     ob_start();
 ?>
 <!DOCTYPE html>
@@ -240,10 +227,12 @@
                             }
                             else {
                                 // success
+                                ob_start();
                                 setcookie("loggedIn", true);
                                 setcookie("username", $user_signup_username);
                                 setcookie("fullname", $user_signup_fullname);
                                 setcookie("userType", $user_signup_usertype);
+                                ob_end_flush();
                                 header("Location: HomePage.php");
                             }
                         }
@@ -365,9 +354,11 @@
                 else if (isset($_POST["openCourse"])) {
                     // Open the course in the course viewer page
                     $selected_courseid = $_POST["courseId"];
+                    ob_start();
                     setcookie("courseSelected", true);
                     setcookie("courseid", $selected_courseid);
                     setcookie("unitSelected", false);
+                    ob_end_flush();
                     
                     header("Location: CourseViewer.php");
                 }

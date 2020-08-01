@@ -1,4 +1,7 @@
-<?php require "phpLibrary/queryFunctions.php"; ?>
+<?php
+    require "phpLibrary/queryFunctions.php";
+    ob_start();
+?>
 <!DOCTYPE html>
 <!--This is the main page for the first assignment. Create the welcome page and enable all of the navigation-->
 <html>
@@ -91,8 +94,10 @@
             if (isset($_POST["selectQuiz"])) {
                 $selectedQuizNum = $_POST["quizNum"]; // This is basically the unit number as well
 
+                ob_start();
                 setcookie("quizSelected", true);
                 setcookie("quizNum", $selectedQuizNum);
+                ob_end_flush();
                 
                 header("Location: Quizzes.php");
             }

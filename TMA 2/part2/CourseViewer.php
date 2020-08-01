@@ -1,4 +1,7 @@
-<?php require "phpLibrary/queryFunctions.php"; ?>
+<?php
+    require "phpLibrary/queryFunctions.php";
+    ob_start();
+?>
 <!DOCTYPE html>
 <!--This is the main page for the first assignment. Create the welcome page and enable all of the navigation-->
 <html>
@@ -93,8 +96,10 @@
             if (isset($_POST["selectUnit"])) {
                 $selectedUserNum = $_POST["unitNumber"];
 
+                ob_start();
                 setcookie("unitSelected", true);
                 setcookie("unitNum", $selectedUserNum);
+                ob_end_flush();
                 
                 header("Location: CourseViewer.php");
             }
