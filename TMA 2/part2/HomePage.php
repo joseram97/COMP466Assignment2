@@ -364,7 +364,7 @@
                         $cookie_username = $_COOKIE["username"];
                         $cookie_fullname = $_COOKIE["fullname"];
                         $cookie_usertype = $_COOKIE["usertype"];
-                        print("<h2><strong>$cookie_fullname's Course Management$cookie_usertype</strong></h2>");
+                        print("<h2><strong>$cookie_fullname's Course Management</strong></h2>");
                         if ($cookie_usertype == "SME") {
 
                             // Show only the courses that the SME has created and the option to add more
