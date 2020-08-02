@@ -602,10 +602,13 @@
                                                 print('<label><strong>Images: </strong></label>');
                                                 print('<input type="file" name="createCourse_images[]" multiple>');
                                             print('</div>');
-                                            print('<div class="userInputButtonContainer">');
-                                                print('<button id="editCourseCancelButton" class="userInputButton" type="button" name="edit_course_canceled">Cancel</button>');
-                                                print("<button id=\"editCourseCreateButton\" class=\"BoatButton\" $promptCreateCourseButtonStyle type=\"submit\" name=\"edit_course_create\">Upload</button>");
-                                                print("<button id=\"editCourseUpdateButton\" class=\"BoatButton\" $promptUpdateCourseButtonStyle type=\"submit\" name=\"edit_course_update\">Edit</button>");
+                                            print('<div style="display:flex; flex-direction: row; align-items: center; justify-content: center;">');
+                                                print('<div class="userInputButtonContainer">');
+                                                        print('<button id="editCourseCancelButton" class="userInputButton" type="button" name="edit_course_canceled">Cancel</button>');
+                                                        print("<button id=\"editCourseCreateButton\" class=\"BoatButton\" $promptCreateCourseButtonStyle type=\"submit\" name=\"edit_course_create\" onclick=\"showContent('EML_SpinLoader')\">Upload</button>");
+                                                        print("<button id=\"editCourseUpdateButton\" class=\"BoatButton\" $promptUpdateCourseButtonStyle type=\"submit\" name=\"edit_course_update\" onclick=\"showContent('EML_SpinLoader')\">Edit</button>");
+                                                print('</div>');
+                                                print('<div id="EML_SpinLoader" class="spinLoader" style="display: none; margin-left: 10px"></div>');
                                             print('</div>');
                                         print('</div>');
                                     print('</div>');

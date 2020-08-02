@@ -124,7 +124,7 @@ function startup() {
 
     if (document.getElementById('editCourseCancelButton') != null) {
         document.getElementById('editCourseCancelButton').addEventListener("click", function() {
-            OverlayFadeOut('overlay');
+            showContent("EML_SpinLoader");
         }, false);
     }
 
