@@ -481,9 +481,6 @@
                                                         print("<button type=\"submit\" name=\"addLearnerCourse\" class=\"courseButtonItem\">");
                                                             print('<img class="courseButtonImage" src="../shared/images/add_icon.png"/>');
                                                         print('</button>');
-                                                        print("<button type=\"submit\" name=\"deleteLearnerCourse\" class=\"courseButtonItem\">");
-                                                            print('<img class="courseButtonImage" src="../shared/images/delete_icon.png"/>');
-                                                        print('</button>');
                                                     print('</div>');
                                                 print('</form>');
                                             print('</div>');
