@@ -63,7 +63,33 @@
             <p>
                 <h3>Here are the requirements</h3>
                 <ul>
-                    <li>TODO: Fill in content here</li>
+                    <li>Create a multi-paged online learning course website to help users learn about various topics the <strong>Subject Matter Experts (SMEs)</strong> create</li>
+                    <li>Utilize a simple login/log-out system to keep track of the "learning" users and the SMEs</li>
+                    <li>Utilize an <strong>Education Mark-up Language (EML)</strong> for SMEs to use and create their courses for the site</li>
+                    <li>
+                        The EML should be able to
+                        <ul>
+                            <li>Allow SME to create units</li>
+                            <li>Allow the SME to create lessons within the units</li>
+                            <li>Allow the SME to add images to lessons to enhance learning</li>
+                            <li>For every unit created, a quiz is also to be setup with as many questions as they like</li>
+                            <li>Be setup in an easy to read and use form</li>
+                        </ul>
+                    </li>
+                    <li>The website must be able to parse the EML and display it as html content for the user to view the courses, units, lessons and quizzes. This is done with the creation of a parser</li>
+                    <li>
+                        The website must be able to
+                        <ul>
+                            <li>Allows users to login and signup</li>
+                            <li>Allows "learners" to enroll/un-enroll courses available on the website</li>
+                            <li>Allows SMEs to upload an EML based file (along with the option to upload images with the EML file as well)</li>
+                            <li>Allow SMEs to view the courses that they uploaded to ensure the quality of the course</li>
+                            <li>Allow SMEs to update their courses with a new EML file (and newer images)</li>
+                            <li>SMEs can delete any course that they've created</li>
+                            <li>Both Learners and SMEs must be able to view <i>Quizzes</i> on a seperate web page and take the test, showing results</li>
+                        </ul>
+                    </li>
+                    <li>The website must be presented in a professional manner, with a simple to understand user-interface</li>
                 </ul>
             </p>
 			<hr>
@@ -74,13 +100,87 @@
 			<p>Some text</p>
 			<hr>
 			<h2>User Guide</h2>
-			<p>Some text</p>
+            <p>The following is the user guide explaining how to use the site as a learner and/or as an SME, what pages are available, how to view courses and finally take quizzes.</p>
+            <h3>Homepage</h3>
+            <p>When you first open the site, you will be greeted with the homepage of the B.O.A.T. Online Course website. From here you can view some of the courses that are available to learn from when you sign up for the website. You can see there is a link to the main <i>TMA 2.html</i> page near the main title of the page. You will also notice that there is a <strong>navigation bar</strong> on the top of the page. At first if you are not logged in, it should only show "home". There is both a <strong>Log In</strong> and <strong>Sign Up</strong> button near the top right of the page.</p>
+            <p>
+                You will also notice near the bottom of the page a "list" of courses that are available within the course that a Learner may be enroll in.
+            </p>
+            <p>
+                To <strong>Sign Up</strong>, click the <i>Sign up</i> button on the top right of the page, and follow all of the prompts, inputs within to create your user profile. <strong>NOTE:</strong> One thing to keep of note, when you create the user profile, you will also need to select the type of profile you want. You have the choice between a Learner or a Subject Matter Expert (SME). This is important. If you want to be a Learner, select <strong>Learner</strong>, otherwise select <strong>SME</strong>.
+                Some errors may pop up, and follow their suggestions to resolve the issues (e.g. username already taken, wrong password input). Once you complete the profile, you will be automatically logged in to the page.
+            </p>
+            <p>
+                To <strong>Log In</strong>, click the <i>Log in</i> button on the top right of the page. You will be prompted to enter your username and password (this is assuming that you have created a profile from the <strong>Sign up</strong> button). Once the correct username and password are entered, you will be logged into the site and be shown the <strong><i>Course Management</i></strong> page.
+            </p>
+            <p>
+                <i><strong>NOTE #1: </strong> If you are an SME, you will be able to manage courses that you have created, and be able to view courses and take "mock" quizzes</i>
+            </p>
+            <p>
+                <i><strong>NOTE #2: </strong> To sign out anytime, click the "Sign Out" button on the top right of the page</i>
+            </p>
+            <h3>Course Management - Learner</h3>
+            <p>
+                When you log in as a Learner, you will notice that you are directed to the Course Mangement page. From here you will be shown 2 lists. One for the courses that you are enrolled in, and another showing all of the courses that are available on the website. As learner, you can enroll in courses by clicking the <strong>+</strong> button on any of the courses. To un-enroll in courses, on the left list, simply click the "trash" remove button to not have the course.
+                You may view the course and its units by simply clicking the area where it says <i>Click here to select the course</i> and you will be redirected to the <strong>Course Viewing</strong> page
+            </p>
+            <h3>Course Viewing</h3>
+            <p>
+                Within this page, you will now notice that there are multiple navigation buttons near the top of the page.
+                <ul>
+                    <li><strong>Course Management:</strong> will take you back to the course management page to view courses available on the site (or if you are an SME, add/remove courses that you have created)</li>
+                    <li><strong>Course Viewer:</strong> will open the main course page to be able to view all of the course material, including the units and lessons</li>
+                    <li><strong>Course Quizzes:</strong> view all of the available quizzes for each of the units</li>
+                </ul>
+            </p>
+            <p>
+                On the left of the page is the <strong>Unit Selector</strong> pane, where all of the available units are visible and to view them, simply click on the unit name that you desire. The unit will be visible within the page, and you can view and study the material.
+            </p>
+            <h3>Quizzes</h3>
+            <p>
+                Within this page, you will be able to quiz yourself on the units that were available within the course. On the left, you will see the <strong>Quiz Selector</strong> pane. To select a quiz, click on any of the quiz names (based on their unit number) and all the questions will be visible. Please ensure to select an answer for each of the questions before clicking <strong>Submit</strong>. Once you click <strong>Submit</strong> the number of correct answers will be visible, along with your
+                percentage mark. To view any wrong answers, simply scroll through the questions and look at a question that resulted in showing a red box. There, it will tell you what the correct answer is so that you may learn and try again the next time.
+            </p>
+            <h3>Course Management - SME</h3>
+            <p>
+                As a <strong>Subject Matter Expert</strong> you will be given power to create courses that other users can sign up for! After signing up as an SME, you will be redirected to the <strong>Course Management</strong> page. From here, it will look a little bit more different than when a Learner has logged in. You will notice that there is only a single list. This list will show all of the courses that you, as an SME, have created for the website. You can create/edit/remove any of these courses
+            </p>
+            <h3>Course Creation - SME</h3>
+            <p>
+                To create a course, you have to understand the <strong>Educational Markup Language (EML)</strong> used for organizing the contents of the course. Your course may include:
+                <ul>
+                    <li>Units</li>
+                    <li>Lessons for each unit</li>
+                    <li>Quizzes (1 for each unit)</li>
+                    <li>Image media</li>
+                </ul>
+            </p>
+            <p>
+                In order to make the creation of the courses easier, the EML has been set up with easy to understand tags. To view an example of the EML file, <a href="../part2/EML/EML.xml">Click Here</a> or click the hyperlink on the course management page. Ensure that the contents of the course match the framework of this EML and are initially saved as an .xml file locally within your computer.
+                <i><strong>NOTE #1: </strong> With the contents of any of these tags, you must use the <code>&lt;![CDATA[]]&gt;</code> wrapper to "escape" any characters that would not translate as a string to the database server. Some examples of what that may look like can be found <a href="../part2/EML/EML_Course1.xml">here</a></i>
+                <i><strong>NOTE #2: </strong> When referencing images within your EML file, ensure that the name of the images are the same as the images that are going to be uploaded to the server</i>
+            </p>
+            <p>
+                Once your images (.png, .jpg, .gif) and EML file are ready locally, simply click the <strong>Create Course</strong> button on the left of the page. From the prompt, select the EML file, and the corresponding images. Wait for the contents to completely load. <i><strong>NOTE: </strong> some errors may show. Please read them carefully and fix the issues (e.g. number of quizzes don't match number of units, the course name is already taken</i>
+                Once the uploading is complete, you should be able to see you course visible within the course list on the main page. You may view the contents of the course by clicking the <i>Click here to select course</i> button. You will be redirected to the <strong>Course Viewer</strong> page and can view the units, and check out the quizzes in the <strong>Course Quizzes</strong> page by click the <strong>Course Quizzes</strong> navigation button on the top of the web page.
+            </p>
+            <p>
+                To <strong>edit</strong> a course, simply click the edit (i.e. pencil icon) button on the course, and upload the modified EML file, and include all of the original and newly added/removed images through the upload process. To <strong>remove</strong> a course, simply click the delete (i.e. trash can icon) button and the course will be removed, and will not be visible to Learners and anyone else using the site.
+            </p>
 			<hr>
 			<h2>Link</h2>
-			<p>Click the link either in the "Links" tab on the navigation bar, or here: <a href="../part2/HomePage.php">Part 1 - Bookmark Site</a></p>
+			<p>Click the link either in the "Links" tab on the navigation bar, or here: <a href="../part2/HomePage.php">Part 2 - B.O.A.T. Tutorials</a></p>
 			</br>
 			<h2>Extra Notes for Tutor</h2>
-			<p>Some text</p>
+			<p>
+                Some things to keep of note when viewing the site
+                <ul>
+                    <li>If you are unable to access the site online, please email me at <a href="mailto:jramirez2@athabasca.edu">jramirez2@athabasca.edu</a> and I will try to grant you access. However, this site should be available to the public anyway</li>
+                    <li>When uploading the sample EML file and the corresponding images/gifs, the load time is a little while so please be patient when the files are uploading</li>
+                    <li>If testing out the site locally, please ensure that both the Database.sql files for part 1 and part 2 have run on your MySQL server to create the necessary databases</li>
+                    <li>Some <i>Mock</i> data will be put on the websites to showcase what different bookmarks, and different courses other potential users may have added to the site</li>
+                </ul>
+            </p>
         </div>
     </body>
 </html>
