@@ -541,7 +541,9 @@
                                                 print('<label><strong>Password: </strong></label>');
                                                 print('<input type="password" class="userInputBox" placeholder="Enter password..." name="password" required />');
                                             print('</div>');
-                                            print('<button class="userInputButton" type="submit" name="login_entered">Log In</button>');
+                                            print ('<div style="display: flex; justify-content: center;">');
+                                                print('<button class="userInputButton" type="submit" name="login_entered">Log In</button>');
+                                            print('</div>');
                                         print('</div>');
                                     print('</div>');
                                 print('</form>');
@@ -577,7 +579,9 @@
                                                 print('<label><strong>Re-type Password: </strong></label>');
                                                 print('<input type="password" class="userInputBox" placeholder="Enter password..." name="signup_password2" required>');
                                             print('</div>');
-                                            print('<button class="userInputButton" type="submit" name="signup_entered">Sign up!</button>');
+                                            print ('<div style="display: flex; justify-content: center;">');
+                                                print('<button class="userInputButton" type="submit" name="signup_entered">Sign up!</button>');
+                                            print('</div>');
                                         print('</div>');
                                     print('</div>');
                                 print('</form>');
