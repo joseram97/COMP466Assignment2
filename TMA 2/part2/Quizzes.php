@@ -9,6 +9,7 @@
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
         <title>B.O.A.T. Bookmark</title>
+        <link rel="icon" type="image/png" href ="../shared/images/COMP466Logo_favicon.png"/>
         <link rel="stylesheet" type="text/css" href="../shared/Template_CSS.css"/>
         <link rel="stylesheet" type="text/css" href="../shared/BoatOnlineCourses.css"/>
         <link rel="stylesheet" type="text/css" href="../shared/BoatViewerStyles.css"/>
