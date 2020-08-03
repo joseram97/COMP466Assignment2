@@ -365,6 +365,8 @@
                         if ($cookie_usertype == "SME") {
 
                             // Show only the courses that the SME has created and the option to add more
+                            print('<div><a href="EML/EML.xml">Click here</a> to view the framework of the <strong>Educational Markup Language</strong></div>');
+                            print('<div><a href="EML/EML_Course1.xml">Click here</a> to view an example of a course using EML</div>');
                             print('<div id="createCourseButton" class="BoatButton left" style="width: fit-content;">Create Course</div>'); // Prompt will ask to supply EML file
                             print('<div class="courseListContainer">');
                             $coursesResult = selectQueryBuilder($webDatabase, "Courses", "*", "WHERE userCreator = '$cookie_username'");
@@ -587,7 +589,7 @@
                                             print('Edit Course');
                                         print('</div>');
                                         print('<div id="CreateCourseIntro" class="introText">');
-                                            print('In order to create and upload a course to this website, please add the file of the EML (Education Markup Language) file below, and any images used for the course content!');
+                                            print('In order to create and upload a course to this website, please add the file of the EML (Educational Markup Language) file below, and any images used for the course content!');
                                         print('</div>');
                                         print('<div id="userInputsCreateCourse" class="userInputContainer">');
                                             print("<input type=\"text\" class=\"hidden\" name=\"courseId\" id=\"edit_course_id\"/>");
