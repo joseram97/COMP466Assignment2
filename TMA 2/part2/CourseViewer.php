@@ -26,7 +26,7 @@
                 </div>
             </div>
             <nav class="navbar-container">
-                <a class="navbar-itemlogo" href="">
+                <a class="navbar-itemlogo" href="HomePage.php">
                     <img class="brand-logo" src="../shared/images/COMP466Logo.png"/>
                 </a>
                 <div class="container container-fluid">
