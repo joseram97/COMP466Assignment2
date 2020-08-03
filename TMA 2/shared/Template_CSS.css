@@ -9,6 +9,10 @@ Very Lighe Grey: ##f3f3f3
 White: #FFFFFF
 */
 
+p {
+    line-height: 25px;
+}
+
 html {
     background-color: #05668D;
 }
