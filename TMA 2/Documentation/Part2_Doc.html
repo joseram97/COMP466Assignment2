@@ -95,10 +95,422 @@
             </p>
 			<hr>
 			<h2>Design and Analysis</h2>
-			<p>Some text</p>
+			<p>
+                The design and analysis of my solution for creating this online course website will be described through the following sections:
+                <ul>
+                    <li>Website Layouts</li>
+                    <li>EML Design</li>
+                    <li>Database Design</li>
+                    <li>
+                        Data Flow
+                        <ul>
+                            <li>Learner Enrolling/Un-enrolling</li>
+                            <li>Learner/SME Viewing Course/Quizzes</li>
+                            <li>SME Creating/Removing Course</li>
+                            <li>Anonymous User on HomePage</li>
+                        </ul>
+                    </li>
+                    <li>
+                        EML Parser
+                    </li>
+                </ul>
+            </p>
+            <h3>Website Layout</h3>
+            <p>
+                The entire course will be structured with 3 pages
+                <ul>
+                    <li>
+                        Home Page/Course Management Page
+                        <ul>
+                            <li>
+                                This page will be the "main home page" for the entire course, both for logged in users and non-logged in users. The <i>Home Page</i> part will showcase some of the available courses from the website. It will also include the <strong>Log in</strong> and <strong></strong>Sign up</strong> buttons for a user to either create a new account, or log in with their existing credentials.
+                                Once a user logs in or signs up, the page will then change to the <i>Course Management</i> page. This new page will be different for either <strong>Learners</strong> and <strong>Subject Matter Experts</strong>. For <strong>Learners</strong> they will be shown 2 lists. One list will showcase all of the courses the user is enrolled in, and another list showcasing all of the available courses given by the website. The Learner will be able to enroll and un-enroll within this page.
+                                For the <strong>SME</strong> within the same page, they will only be shown 1 list, showcasing all of the courses that they have created and uploaded to website. For <strong>both</strong> types of users, this page will allow users to click and select a course to view in the <strong>Course Viewer</strong> page and see the quizzes in the <strong>Course Quiz</strong> viewer page.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Course Viewer
+                        <ul>
+                            <li>
+                                This page will show the same course contents for the <strong>Learner</strong> and <strong>SME</strong>. For the <i>Course Viewer</i> page, it will show all of the course contents, including the units within the courses, their lessons, and any image media. These contents will be grabbed with the database server. Additionally, another page called the <i>Course Quiz</i> page will showcase all of the available quizzes for each of the units within the course.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Course Quiz Viewer
+                        <ul>
+                            <li>
+                                This page will show the same course contents for the <strong>Learner</strong> and <strong>SME</strong>. The page called the <i>Course Quiz</i> page will showcase all of the available quizzes for each of the units within the course. The contents will be grabbed by the database server.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <i><strong>NOTE: </strong> all of the pages will also include a <strong>Sign out</strong> button to sign out and redirect to the home page at any time.</i>
+            </p>
+            <h3>EML Design</h3>
+            <p>
+                The <strong>Educational Markup Language</strong> should be designed to be easy to understand and easy to create courses. The following tags were set up with corresponding attributes.
+                <ul>
+                    <li>
+                        course - the main wrapper to hold all other course content
+                        <ul>
+                            <li><strong>Attribute: </strong> name - the main title of the course</li>
+                            <li>courseDescription - a brief description of the entire course</li>
+                            <li>
+                                units - holds all of the individual units for the course
+                                <ul>
+                                    <li>
+                                        unit - the individual unit
+                                        <ul>
+                                            <li><strong>Attributes: </strong> number - the unit number, title - the unit title</li>
+                                        </ul>
+                                        <ul>
+                                            <li>unitDescription - a brief description of what the unit will include</li>
+                                            <li>
+                                                lesson - will contain all of the lesson contents and images
+                                                <ul>
+                                                    <li><strong>Attributes: </strong> number - the lesson number, title - the lesson title</li>
+                                                    <li>
+                                                        lessonContent - a paragraph of text which may include images
+                                                        <ul>
+                                                            <li><strong>Attributes: </strong> number - the content number, this will help with ordering the paragraph, title - the lesson content title (optional) for more detail</li>
+                                                            <ul>
+                                                                <li>content - the main text for the paragraph. May require !CDATA wrapper <i>(you can see a sample later)</i></li>
+                                                                <li>
+                                                                    images - the tag to hold all of the images that may be added right after the paragraph
+                                                                    <ul>
+                                                                        <li>
+                                                                            image - the main tag for "saving" the image
+                                                                            <ul>
+                                                                                <li><strong>Attributes: </strong>number - the order number of the image to show beneath the paragraph, fileName - the name of the file that will be uploaded to then link to the tag and then be saved on the server</li>
+                                                                            </ul>
+                                                                        </li>
+                                                                    </ul>
+                                                                </li>
+                                                            </ul>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                quizzes - holds all of the individual quizzes for the course. Must be equal to the number of units for the course
+                                <ul>
+                                    <li>
+                                        quiz - the individual quiz element that will hold the question and answers
+                                        <ul>
+                                            <li><strong>Attribute: </strong>unit - the corresponding unit number that the quiz is linked to</li>
+                                            <li>
+                                                question - the individual question element that will hold the main question text, and the answers
+                                                <ul>
+                                                    <li><strong>Attribute: </strong>number - the order number for the question</li>
+                                                    <ul>
+                                                        <li>questionText - the text for the question</li>
+                                                        <li>answer1 - the first answer</li>
+                                                        <li>answer2 - the second answer</li>
+                                                        <li>answer3 (optional) - the third answer</li>
+                                                        <li>answer4 (optional) - the fourth answer</li>
+                                                        <li>correctAnswer - the number of the correct answer, between 1-4</li>
+                                                    </ul>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </p>
+            <p>
+                To view an example of the base template for the EML, click <a href="../part2/EML/EML.xml">here</a>. To view an example of what a fleshed out EML file looks like, click <a href="../part2/EML/EML_Course1.xml">here</a>.
+            </p>
+            <h3>Database Design</h3>
+            <p>
+                The database for the website will consist of <strong>8</strong> tables. Each of these tables have a specific purpose of which data to store. See below a description of each of the tables and their relations:
+                <ul>
+                    <li>
+                        <strong>Users</strong>
+                        <ul>
+                            <li>
+                                <p>This table will contain all of the user information</p>
+                                <p>
+                                    <strong>Fields</strong>
+                                    <ul>
+                                        <li>username - the username that the user wants to login as</li>
+                                        <li>password - the password for the user to login with</li>
+                                        <li>fullname - the full name of the user</li>
+                                    </ul>
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Courses</strong>
+                        <ul>
+                            <li>
+                                <p>This table will contain the courseid and its name, and description, and will be the "base" of keeping track of the courses</p>
+                                <p>
+                                    <strong>Fields</strong>
+                                    <ul>
+                                        <li>courseid - the courseid for the course that is created</li>
+                                        <li>courseName - the name/title of the course</li>
+                                        <li>courseShortDescription - a brief description of what the course is about</li>
+                                        <li>userCreator - the username of the SME who created the course <strong>related to <i>username</i> from Users</strong></li>
+                                        <li>createdDate - the date of when the course was created</li>
+                                    </ul>
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>UserCourseAssignments</strong>
+                        <ul>
+                            <li>
+                                <p>This table will contain the user assignments (learners) enrolled with the courses that they selected</p>
+                                <p>
+                                    <strong>Fields</strong>
+                                    <ul>
+                                        <li>username - this is the username of the user enrolled <strong>must exist in <i>Users</i></strong></li>
+                                        <li>courseid - this is the courseid of the course the user is enrolled in <strong>must exist in <i>UserCourseAssignments</i></strong></li>
+                                    </ul>
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Units</strong>
+                        <ul>
+                            <li>
+                                <p>This table will contain the units for a given course and the unit information</p>
+                                <p>
+                                    <strong>Fields</strong>
+                                    <ul>
+                                        <li>unitNumber - the order number of the unit within the course</li>
+                                        <li>courseid - the courseid that the unit is associated with <strong>must exist in table <i>Courses</i></strong></li>
+                                        <li>unitTitle - the title name of the unit</li>
+                                        <li>unitDescription - a brief description of the unit</li>
+                                    </ul>
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Lessons</strong>
+                        <ul>
+                            <li>
+                                <p>This table contains the lessons and lesson information for a given unit within a course</p>
+                                <p>
+                                    <strong>Fields</strong>
+                                    <ul>
+                                        <li>lessonNumber - the order number of the lesson within a unit</li>
+                                        <li>unitNumber - the associated unitNumber that the lesson is a part of <strong>must exist in <i>Units</i></strong></li>
+                                        <li>courseid - the associated courseid that the lesson's unit is a part of <strong>must exist in <i>Units</i></strong></li>
+                                        <li>lessonTitle - the title name of the lesson</li>
+                                    </ul>
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>LessonContents</strong>
+                        <ul>
+                            <li>
+                                <p>This table contains the actual content information of the associated lesson</p>
+                                <p>
+                                    <strong>Fields</strong>
+                                    <ul>
+                                        <li>lessonNumber - the order number of the lesson within a unit <strong>must exist in <i>Lessons</i></strong></li>
+                                        <li>unitNumber - the associated unitNumber that the lesson is a part of <strong>must exist in <i>Lessons</i></strong></li>
+                                        <li>courseid - the associated courseid that the lesson's unit is a part of <strong>must exist in <i>Lessons</i></strong></li>
+                                        <li>contentNumber - the order number of the content paragraph within the lesson</li>
+                                        <li>title - the title name (optional) of the lesson content</li>
+                                        <li>content - the main text content of the paragraph</li>
+                                    </ul>
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Images</strong>
+                        <ul>
+                            <li>
+                                <p>This table contains the image url that is associated with the lesson contents</p>
+                                <p>
+                                    <strong>Fields</strong>
+                                    <ul>
+                                        <li>imageNumber - the order number of the image within the lesson contents</li>
+                                        <li>lessonNumber - the associated lessonNumber <strong>must exist in table <i>LessonContents</i></strong></li>
+                                        <li>unitNumber - the associated unit number <strong>must exist in table <i>LessonContents</i></strong></li>
+                                        <li>courseid - the associated course id <strong>must exist in table <i>LessonContents</i></strong></li>
+                                        <li>contentNumber - the associated lesson content number <strong>must exist in table <i>LessonContents</i></strong></li>
+                                        <li>imageUrl - the image url of where the image is located in the site server</li>
+                                    </ul>
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Quizzes</strong>
+                        <ul>
+                            <li>
+                                <p>This table contains all of the quiz information that is associated with the course (must be the same amount of units)</p>
+                                <p>
+                                    <strong>Fields</strong>
+                                    <ul>
+                                        <li>questionNumber - the order number of the question within the unit</li>
+                                        <li>unitNumber - the associated unit number that the questions are a part of <strong>must exist in table <i>Units</i></strong></li>
+                                        <li>courseid - the courseid that the unit question is a part of <strong>must exist in table <i>Units</i></strong></li>
+                                        <li>questionDescription - the main question text for the question</li>
+                                        <li>answer1 - the text of the first answer</li>
+                                        <li>answer2 - the text of the second answer</li>
+                                        <li>answer3 (optional) - the text of the third answer</li>
+                                        <li>answer4 (optional) - the text of the fourth answer</li>
+                                        <li>correctAnswer - the number of the answer that is correct (e.g. 1, 3, 2)</li>
+                                    </ul>
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </p>
+            <h3>Site Data Flow</h3>
+            <p>
+                The data flow within the site is comprised of using php server and enabling cookies for a smooth experience. The cookie fields were designed as follows:
+                <ul>
+                    <li>loggedIn - is a boolean and is true when a user signs up or logs in, false if logged out</li>
+                    <li>username - the string username of the user that is logged in</li>
+                    <li>fullname - the full name string of the user</li>
+                    <li>usertype - can be either "Learner" or "SME". This is set when a user is logged in/signed up</li>
+                    <li>courseSelected - is a boolean and is true when a course is selected from the "Course Management" page</li>
+                    <li>courseid - the course id of the selected course</li>
+                    <li>unitSelected - is as boolean and is true when a user selects a unit from the "Course Viewer" page</li>
+                    <li>unitNum - the unit number selected from the course on the "Course Viewer" page</li>
+                    <li>quizSelected - is a boolean and is true when a user selects a quiz from the "Course Quizzes" page</li>
+                    <li>quizNum - ths quiz number selected from the quiz on the "Course Quizzes" page</li>
+                </ul>
+                <br>
+                The flow of data will be described as follows:
+                <ul>
+                    <li>
+                        Logging in as a user
+                        <ul>
+                            <li>
+                                User enters username and password <strong>*click Log In</strong> -> php query MySQL database (users table) and verify that the username exists, and password matches <strong>*return true or false</strong> -> Save username, fullname, and usertype to the cookies <strong>*redirect user to homepage (a.k.a the Course Management page now</strong>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Signing up as a user
+                        <ul>
+                            <li>
+                                User enters username, usertype, password <strong>*click Sign Up</strong> -> php query insert to MySQL database (ensuring username is not already taken) <strong>*return success or failure</strong> -> Save username, fullname, and usertype to the cookies <strong>*redirect user to homepage (a.k.a the Course Management page now</strong>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        SME creating a course
+                        <ul>
+                            <li>
+                                SME uploads EML file (and optionally images) to server <strong>*click Upload</strong> -> parse through the EML file <strong>*get course info</strong> -> parse through course info <strong>*get unit info</strong> -> parse through unit info <strong>*get lessoninfo</strong> -> parse through lesson info <strong>*get images and contents (if any)</strong> -> save images onto the server -> parse through quiz information <strong>*insert all contents into database</strong> insert EML contents into the MySQL database (course, units, lessons, lesson Contents, images, quizzes) <strong>*complete insertion</strong> -> show SME new course within course list
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        SME deletes course
+                        <ul>
+                            <li>
+                                SME selects a course to delete <strong>*click delete</strong> -> delete images from the server -> sends the course id and php will remove the course from the <i>Courses</i> table <strong>*MySQL cascade delete</strong> -> show the new course list to the SME user that the course is no longer there
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        SME edits course
+                        <ul>
+                            <li>
+                                SME selects a course to edit <strong>*click edit</strong> -> user uploads the edited EML file (along with any images) -> delete images from the server -> sends the course id and php will remove the course from the <i>Courses</i> table <strong>*MySQL cascade delete</strong> -> upload the course EML and images -> show the updated date and time of the course on the SME course list
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Learner enrolls in course
+                        <ul>
+                            <li>
+                                Learner selects a course from a list of available courses on the website <strong>*click add course button</strong> -> php then sends insert request to add, in UserCourseAssignments table, a connection between the username and the course id <strong>*executes query</strong> -> the user is then shown the course is now added in the enrolled course list
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Learner un-enrolls in course
+                        <ul>
+                            <li>
+                                Learner selects a course to remove from their enrolled courses list <strong>*click remove button</strong> -> php removes the username, and courseid association within the UserCourseAssignments table <strong>*executes query</strong> -> The user now see's the course is not in their enrolled courses and is back in the available courses list
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        User viewing course
+                        <ul>
+                            <li>
+                                User selects course from the <i>Course Management</i> page <strong>OR</strong> User opens the Course viewing page -> in cookies, courseSelected is set to True, courseid is set to the course id selected <strong>*sets cookie and redirects to <i>Course Viewer</i> page</strong>  -> User selects a unit <strong>*click on unit</strong> -> in cookies, unitSelected is set to true, unitNum is set to the selected unitNum -> php querys with course and unit cookie information and grabs the course information about unit, lessons, and images, and displays it as html <strong>*return course contents</strong> -> the user now can view the unit selected and read through the material
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        User viewing Quizzes
+                        <ul>
+                            <li>
+                                User opens the Course Quiz viewing page -> User selects a quiz <strong>*click on quiz</strong> -> for cookies, set quizSelected to true, and quizNum is set to the quiz number selected <strong>*save cookies</strong> -> php queries and uses quiz, unit, and courseid cookie information and grabs the quiz information based on the courseid selected from the course management page <strong>*return quiz questions</strong> -> user takes the quiz and submits the result <strong>*click submit</strong> -> javascript will verify the answers selected and calculate the number of correct answers and the percentage <strong>*returns correct answers and percentage</strong> -> user is shown the correct answers, the number of correct answers selected, and the percentage of correct answers
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </p>
+            <h3>EML Parser</h3>
+            <p>
+                The EML Parser is relatively simple and has been partially described earlier. But here is the process
+                <ul>
+                    <li>Subject Matter Expert (SME) uploads the EML file (along with photos)</li>
+                    <li>PHP will read the EML.xml file and extract and go through the course, unit, lesson, lessonContent, Image, and Quiz information and insert into the MySQL database</li>
+                    <li>Now, whenever the a user wants to view a course, after the course is selected PHP server will query the MySQL database and return the course, unit, lesson, lessonContent, image data and added them to created html objects</li>
+                    <li>Whenever a user wants to view a quiz, after a quiz is selected PHP server will query the MySQL database to get the quiz data (also based on the course that is selected)</li>
+                </ul>
+            </p>
 			<hr>
 			<h2>Implementation</h2>
-			<p>Some text</p>
+			<p>
+                The entire website was created using HTML, CSS, PHP, MySQL, and XML technologies. I have tried to make the desktop experience as consistent as possible, sharing the same styles between the course, quiz, and viewer pages. I have kept all of the files within the same folder directory in order to maintain simplicity, and I thought that have 3 different pages (1 for course management, 1 for course viewing, and 1 for quiz taking) helps organize the code a little better.
+            </p>
+            <p>
+                Within the <strong>part2</strong> folder I have the following sub-folders and their purpose:
+                <ul>
+                    <li><strong>EML</strong> - holds some of the sample EML.xml data to be referenced by a user</li>
+                    <li>
+                        <strong>phpLibrary</strong> - holds seperate php files holding functions that are to be used within the main .php files in the part2 folder
+                        <ul>
+                            <li><i>EMLFunctions</i> - this php file contains functions for uploading and parsing out an EML file (with images) and transferring contents to a MySQL database. Also contains additional helper functions</li>
+                            <li><i>queryFunctions</i> - this php file contains SQL query helper functions to make querying a little bit easier within the main .php pages in the part2 folder</li>
+                        </ul>
+                    </li>
+                    <li><strong>SME_Images</strong> - this folder on the server will hold all of the saved images for its courses</li>
+                    <li><strong>Test_Images</strong> - a folder to hold sample image data to be uploaded to the server again. <strong>Only have access to this in the local zip file, the test_images will not be stored in the server</strong></li>
+                </ul>
+            </p>
+            <p>
+                When setting up the php server within the hosted server, some additional extensions had to be made in order to accomodate larger image and uploads made when creating courses. The following are the following php.ini variables that were modified:
+                <ul>
+                    <li>post_max_size=50M - the max size that a total file uploads can be is 50 MB</li>
+                    <li>upload_max_filesize=15M - the max size that a single file uploaded can be 15MB</li>
+                    <li>max_file_uploads=75 - the max number of files that can be uploaded is 75</li>
+                </ul>
+            </p>
+            <p>
+                Lastly, the way the EML process is setup, within some of the tags used, <strong>CDATA</strong> is highly recommended to ensure that it is easier to write additional html elements within some contents. This is helpful for some SMEs that want to bold, italisize, create ordered or unordered lists using <strong>strong, i, ul, ol</strong> list tags. This is evident in the sample EML.xml file that is link in the design description.
+            </p>
 			<hr>
 			<h2>User Guide</h2>
             <p>The following is the user guide explaining how to use the site as a learner and/or as an SME, what pages are available, how to view courses and finally take quizzes.</p>
@@ -176,6 +588,7 @@
 			<p>
                 Some things to keep of note when viewing the site
                 <ul>
+                    <li>Here is the site url again if you wish to save it as a bookmark: <a href="https://au-comp466-assignment2-web.azurewebsites.net/TMA%202/tma2.html">https://au-comp466-assignment2-web.azurewebsites.net/TMA%202/tma2.html</a></li>
                     <li>If you are unable to access the site online, please email me at <a href="mailto:jramirez2@athabasca.edu">jramirez2@athabasca.edu</a> and I will try to grant you access. However, this site should be available to the public anyway</li>
                     <li>When uploading the sample EML file and the corresponding images/gifs, the load time is a little while so please be patient when the files are uploading</li>
                     <li>If testing out the site locally, please ensure that both the Database.sql files for part 1 and part 2 have run on your MySQL server to create the necessary databases</li>
