@@ -509,7 +509,7 @@
                             $rowcourseCreatedDate = date("M j, Y", strtotime($row["createdDate"]));
 
                             print("<div class=\"courseItemContainer\">");
-                                print('<div class="courseItemInfo">');
+                                print('<div class="courseItemInfo" style="width: 100%;">');
                                 print("<div class=\"courseNameStyle\">$rowcourseName<div class=\"courseDateText\">created: $rowcourseCreatedDate</div></div>");
                                     print("<div class=\"courseDescriptionStyle\">$rowcourseShortDescription</div>");
                                 print('</div>');
