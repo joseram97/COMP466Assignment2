@@ -366,8 +366,10 @@
                         if ($cookie_usertype == "SME") {
 
                             // Show only the courses that the SME has created and the option to add more
-                            print('<div><a href="EML/EML.xml">Click here</a> to view the framework of the <strong>Educational Markup Language</strong></div>');
-                            print('<div><a href="EML/EML_Course1.xml">Click here</a> to view an example of a course using EML</div>');
+                            print('<div style="padding-bottom: 20px;">');
+                                print('<div style="padding-bottom: 5px;"><a href="EML/EML.xml">Click here</a> to view the framework of the <strong>Educational Markup Language</strong></div>');
+                                print('<div><a href="EML/EML_Course1.xml">Click here</a> to view an example of a course using EML</div>');
+                            print('</div>');
                             print('<div id="createCourseButton" class="BoatButton left" style="width: fit-content;">Create Course</div>'); // Prompt will ask to supply EML file
                             print('<div class="courseListContainer">');
                             $coursesResult = selectQueryBuilder($webDatabase, "Courses", "*", "WHERE userCreator = '$cookie_username'");
