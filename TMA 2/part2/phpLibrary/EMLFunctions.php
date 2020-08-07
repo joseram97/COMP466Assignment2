@@ -11,11 +11,6 @@
     // NOTE: The images will be stored in the SME_Images folder.
     //----------------IMGAE INFO END---------------------------
 
-    //------------------CONSTANTS------------------
-    $siteAbsoluteUrl = "http://localhost:3000/TMA%202/part2";
-    // NOTE: This is reserved for adding the absolute site for the azure host location
-    // $siteAbsoluteUrl = "C:\Users\joser\OneDrive\Desktop\UofA PDF's\Semester 2019-2020\Winter Term 2020\Athabasca COMP 466\Assignments\Assignment 2\TMA 2\part2";
-
     function deleteServerImages($webDatabase, $courseId) {
 
         $imageResults = selectQueryBuilder($webDatabase, "Images", "imageUrl", "WHERE courseid = $courseId");
