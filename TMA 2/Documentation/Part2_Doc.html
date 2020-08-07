@@ -483,7 +483,7 @@
 			<hr>
 			<h2>Implementation</h2>
 			<p>
-                The entire website was created using HTML, CSS, PHP, MySQL, and XML technologies. I have tried to make the desktop experience as consistent as possible, sharing the same styles between the course, quiz, and viewer pages. I have kept all of the files within the same folder directory in order to maintain simplicity, and I thought that have 3 different pages (1 for course management, 1 for course viewing, and 1 for quiz taking) helps organize the code a little better.
+                The entire website was created using HTML, Javascript, CSS, PHP, MySQL, and XML technologies. I have tried to make the desktop experience as consistent as possible, sharing the same styles between the course, quiz, and viewer pages. I have kept all of the files within the same folder directory in order to maintain simplicity, and I thought that have 3 different pages (1 for course management, 1 for course viewing, and 1 for quiz taking) helps organize the code a little better.
             </p>
             <p>
                 Within the <strong>part2</strong> folder I have the following sub-folders and their purpose:
@@ -499,6 +499,9 @@
                     <li><strong>SME_Images</strong> - this folder on the server will hold all of the saved images for its courses</li>
                     <li><strong>Test_Images</strong> - a folder to hold sample image data to be uploaded to the server again. <strong>Only have access to this in the local zip file, the test_images will not be stored in the server</strong></li>
                 </ul>
+            </p>
+            <p>
+                The Javascript files created within the 2nd part of the assignment are all connected to their corresponding php file. Homepage has its own, CourseViewer has its own, and Quizzes has its own. For HomePage and Course Viewer, the main purpose of the files are to showcase the dialog prompts properly, set up button actions for opening prompts and editing, and also clearing the cookie once a user signs out. The Javascript for the Quizzes will do the same, AND also have functionality for "marking" the questions and return the full marks and percentages to the user. The formula used in Quizzes is mostly the same as in Assignment 1, however, the objects mentioned are different since we are grabbing data from a database rather than a JSON file.
             </p>
             <p>
                 When setting up the php server within the hosted server, some additional extensions had to be made in order to accomodate larger image and uploads made when creating courses. The following are the following php.ini variables that were modified:
